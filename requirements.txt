@@ -1,7 +1,6 @@
 streamlit
 fastapi
 uvicorn
-chromadb
 openai
 groq
 tenacity
@@ -9,5 +8,5 @@ pandas
 beautifulsoup4
 requests
 python-dotenv
-sentence-transformers
 python-multipart
+pinecone-client
