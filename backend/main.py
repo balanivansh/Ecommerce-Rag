@@ -6,9 +6,10 @@ from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-from fastapi import FastAPI, HTTPException, UploadFile, File, Body
+from fastapi import FastAPI, HTTPException, UploadFile, File, Body, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import uuid
 
 from core.rag_engine import RAGEngine
 from core.scraper import scrape_product_info
@@ -24,24 +25,20 @@ app.add_middleware(
 )
 
 # Global engine instance
-engine = RAGEngine(use_demo_data=True)
+engine = None
 
-# ApiKeyReq removed
-
-# ChatReq defines the shape of the UI's messages
+def get_engine():
+    global engine
+    if engine is None:
+        print("Initializing RAGEngine (this may take a minute to download models)...")
+        engine = RAGEngine(use_demo_data=True)
+    return engine
 
 class ScrapeReq(BaseModel):
     url: str
 
 class AuditorReq(BaseModel):
     scraped_data: Dict[str, Any]
-
-# Configuration endpoints removed in favor of strict .env usage
-
-# ingest_demo removed, users download and ingest CSV explicitly
-
-from fastapi import BackgroundTasks
-import uuid
 
 # Global task tracker for background uploads
 upload_tasks = {}
@@ -50,8 +47,8 @@ def _process_csv_background(task_id: str, temp_path: str):
     """Background processor for CSV ingestion."""
     try:
         df = pd.read_csv(temp_path)
-        # Update RAG Engine with a progress callback dict
-        engine.ingest_csv(df, progress_tracker=upload_tasks[task_id])
+        eng = get_engine()
+        eng.ingest_csv(df, progress_tracker=upload_tasks[task_id])
         upload_tasks[task_id]["status"] = "completed"
         upload_tasks[task_id]["message"] = f"Successfully ingested {len(df)} rows."
     except Exception as e:
@@ -90,7 +87,8 @@ async def get_task_status(task_id: str):
 async def ingest_scrape(req: ScrapeReq):
     scraped_data = scrape_product_info(req.url)
     if scraped_data.get("success"):
-        engine.ingest_scraped_data(scraped_data)
+        eng = get_engine()
+        eng.ingest_scraped_data(scraped_data)
         return {"status": "success", "data": scraped_data}
     raise HTTPException(status_code=500, detail=scraped_data.get("error", "Failed to scrape"))
 
@@ -100,23 +98,24 @@ class ChatReq(BaseModel):
 
 @app.post("/api/chat")
 async def chat(req: ChatReq):
-    if not engine.client:
+    eng = get_engine()
+    if not eng.client:
         raise HTTPException(status_code=401, detail="Groq API Key is missing.")
         
     try:
-        response_text = engine.chat_with_data(req.query, req.history)
+        response_text = eng.chat_with_data(req.query, req.history)
         return {"status": "success", "response": response_text}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/api/modules/auditor")
 async def run_auditor(req: AuditorReq):
-    if not engine.client:
+    eng = get_engine()
+    if not eng.client:
         raise HTTPException(status_code=401, detail="Groq API Key is missing.")
         
     try:
-        report = engine.module_c_business_auditor(req.scraped_data)
+        report = eng.module_c_business_auditor(req.scraped_data)
         return {"status": "success", "report": report}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
