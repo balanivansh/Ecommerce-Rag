@@ -38,20 +38,25 @@ class RAGEngine:
         if not self.hf_token:
             raise Exception("HF_TOKEN not set in environment variables.")
             
-        headers = {"Authorization": f"Bearer {self.hf_token}"}
-        
+        from huggingface_hub import InferenceClient
         import time
+        
+        client = InferenceClient(token=self.hf_token)
+        
         for attempt in range(5):
-            response = requests.post(self.hf_api_url, headers=headers, json={"inputs": texts, "options": {"wait_for_model": True}})
-            
-            if response.status_code == 200:
-                return response.json()
-            elif response.status_code == 503:
-                print(f"HF Model loading, waiting 10s (attempt {attempt+1}/5)...")
-                time.sleep(10)
-            else:
-                raise Exception(f"HF API Error {response.status_code}: {response.text}")
-                
+            try:
+                # InferenceClient handles optimal routing internally
+                embeddings = client.feature_extraction(texts, model="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+                # Return list of lists for Pinecone compatibility
+                return embeddings.tolist()
+            except Exception as e:
+                error_msg = str(e)
+                if "503" in error_msg or "Model is loading" in error_msg or "timeout" in error_msg.lower():
+                    print(f"HF Model loading, waiting 10s (attempt {attempt+1}/5)...")
+                    time.sleep(10)
+                else:
+                    raise Exception(f"HF API Error: {error_msg}")
+                    
         raise Exception("HF API Error: Model took too long to load.")
 
     @retry(wait=wait_exponential(multiplier=1, min=2, max=10), stop=stop_after_attempt(5))
