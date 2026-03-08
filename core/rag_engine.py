@@ -170,19 +170,28 @@ Only output the exact word ANALYTICAL or SEMANTIC."""
                 
                 schema = str(df.dtypes.to_dict())
                 
-                pandas_sys_prompt = f"""You are a Python Pandas Data Scientist.
-You have a DataFrame named `df` with the following schema:
-{schema}
+                pandas_sys_prompt = f"""You are an elite Python Data Scientist. 
+You are given a Pandas DataFrame named `df` with this schema: {schema}
 
-Write exactly ONE line of Python code that evaluates to the answer for the user's query.
-The code must be an expression that `eval()` can execute (e.g., `df['Category'].unique().tolist()` or `len(df[df['Status'] == 'Returned'])`).
-Do NOT include the word python, backticks, variables, or print statements. Output strictly the code expression."""
+Return EXACTLY ONE LINE of pure Python Pandas code that evaluates to the answer.
+- MUST be a valid `eval()` expression.
+- NO SQL. NO Markdown. NO explanations. NO variable assignment.
+- Example: `len(df[(df['Category'] == 'Speakers') & (df['Status'] == 'Returned')])`
+- Example: `df['Price'].mean()`
+ONLY output the expression."""
                 
                 generated_code = self._call_llm(pandas_sys_prompt, query).strip()
                 
-                if generated_code.startswith("```"):
-                    generated_code = generated_code.split("\n")[1].replace("```", "").strip()
+                # Aggressive cleaning for rogue markdown or explanations
+                if "```python" in generated_code:
+                    generated_code = generated_code.split("```python")[1].split("```")[0].strip()
+                elif "```" in generated_code:
+                    generated_code = generated_code.split("```")[1].strip()
                 
+                if "=" in generated_code and "==" not in generated_code:
+                    # Strip bad variable assignments like `Result = df...`
+                    generated_code = generated_code.split("=")[1].strip()
+                    
                 local_vars = {"df": df, "pd": pd}
                 try:
                     raw_result = eval(generated_code, {"__builtins__": {}}, local_vars)
@@ -190,9 +199,9 @@ Do NOT include the word python, backticks, variables, or print statements. Outpu
                     context_block = f"""[ANALYTICAL AGGREGATIONS]
 These are precise statistics computed directly from the tabular database. Trust these numbers absolutely.
 Result: {str(raw_result)}
-(Code Executed: {generated_code})"""
+(Do not show any Python or SQL code to the user in your response. Just explain the result naturally.)"""
                 except Exception as code_error:
-                    context_block = f"Failed to execute analytical query correctly. AI generated: {generated_code}. Error: {str(code_error)}"
+                    context_block = f"AI generated invalid Pandas code: '{generated_code}'. Resulted in error: {str(code_error)}. State that the exact number could not be computed."
             except Exception as e:
                 context_block = f"Critical Pandas Error: {str(e)}"
                 
