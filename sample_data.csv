@@ -1,0 +1,1001 @@
+Product ID,Date,Category,Product Name,Description,Stock,Status,Return Reason,Review,Rating,Language
+P0001,2023-01-31,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,302,Sold,,Very high quality. Will buy again.,4,English
+P0002,2023-09-02,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,184,Sold,,Very high quality. Will buy again.,5,English
+P0003,2023-10-24,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,345,Sold,,Great value for the price.,4,English
+P0004,2023-08-27,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,165,Sold,,काम ही नहीं कर रहा ठीक से।,3,Hindi
+P0005,2023-04-22,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,261,Sold,,क्वालिटी काफी अच्छी है।,4,Hindi
+P0006,2023-02-09,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,334,Sold,,Fast delivery and excellent packaging.,4,English
+P0007,2023-02-04,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,204,In Transit,,Waiting for delivery...,0,English
+P0008,2023-05-22,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,86,Sold,,My wife loves it so much!,5,English
+P0009,2023-10-18,Apparel,Denim Jeans,Classic straight fit blue jeans.,468,Sold,,,0,English
+P0010,2023-04-15,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,481,Sold,,Fast delivery and excellent packaging.,5,English
+P0011,2023-10-02,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,305,Sold,,Absolutely love this product!,5,English
+P0012,2023-03-12,Apparel,Sneakers,Casual everyday walking shoes.,431,Sold,,"Terrible quality, do not buy.",3,English
+P0013,2023-02-01,Apparel,Sneakers,Casual everyday walking shoes.,174,Sold,,,0,English
+P0014,2023-02-15,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,262,Sold,,Highly recommended to anyone.,5,English
+P0015,2023-11-04,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,413,Sold,,Highly recommended to anyone.,5,English
+P0016,2023-07-10,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,47,Returned,Handle loose,"Terrible quality, do not buy.",3,English
+P0017,2023-09-13,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,321,In Transit,,Waiting for delivery...,0,English
+P0018,2023-01-14,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,132,Sold,,Great value for the price.,4,English
+P0019,2023-04-12,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,155,Sold,,डिलीवरी बहुत देर से आई।,3,Hindi
+P0020,2023-07-11,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,61,Sold,,,0,English
+P0021,2023-05-07,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,207,Sold,,Exceeded my expectations entirely.,5,English
+P0022,2023-04-18,Appliances,Air Fryer,5-quart digital air fryer with presets.,274,Returned,Timer broken,पैसे बर्बाद हो गए इसे खरीद कर।,2,Hindi
+P0023,2023-10-11,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,446,Returned,Dulls fast,काम ही नहीं कर रहा ठीक से।,2,Hindi
+P0024,2023-06-17,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,372,Sold,,My wife loves it so much!,4,English
+P0025,2023-02-27,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,485,Sold,,Great value for the price.,4,English
+P0026,2023-06-30,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,451,Sold,,Very high quality. Will buy again.,5,English
+P0027,2023-11-03,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,265,Sold,,,0,English
+P0028,2023-11-08,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,316,In Transit,,Waiting for delivery...,0,English
+P0029,2023-08-18,Apparel,Winter Jacket,Waterproof insulated winter coat.,412,Sold,,,0,English
+P0030,2023-01-28,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,156,Sold,,Broke after two days of use.,3,English
+P0031,2023-08-20,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,199,Sold,,Works perfectly as described.,4,English
+P0032,2023-08-31,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,261,Returned,Bulb flickers,Worst online shopping experience.,3,English
+P0033,2023-09-05,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,50,Sold,,Completely useless and defective.,3,English
+P0034,2023-09-18,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,6,Sold,,,0,English
+P0035,2023-02-19,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,490,Sold,,,0,English
+P0036,2023-08-04,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,257,Sold,,Worst online shopping experience.,3,English
+P0037,2023-04-14,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,87,Sold,,Broke after two days of use.,3,English
+P0038,2023-09-24,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,285,Sold,,Exceeded my expectations entirely.,4,English
+P0039,2023-08-18,Appliances,Air Fryer,5-quart digital air fryer with presets.,168,Sold,,,0,English
+P0040,2023-05-15,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,309,Sold,,Absolutely love this product!,5,English
+P0041,2023-02-22,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,237,Sold,,,0,English
+P0042,2023-04-07,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,451,In Transit,,Waiting for delivery...,0,English
+P0043,2023-06-21,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,197,In Transit,,Waiting for delivery...,0,English
+P0044,2023-11-15,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,165,Returned,Switch broken,I regret buying this.,1,English
+P0045,2023-05-19,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,256,Sold,,Highly recommended to anyone.,4,English
+P0046,2023-07-02,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,347,Sold,,Highly recommended to anyone.,5,English
+P0047,2023-07-25,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,16,Returned,Arrived late,"Terrible quality, do not buy.",2,English
+P0048,2023-11-13,Apparel,Sneakers,Casual everyday walking shoes.,102,Sold,,,0,English
+P0049,2023-01-28,Apparel,Sneakers,Casual everyday walking shoes.,351,Sold,,Fast delivery and excellent packaging.,4,English
+P0050,2023-01-15,Apparel,Sneakers,Casual everyday walking shoes.,250,Sold,,,0,English
+P0051,2023-01-30,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,274,Sold,,Exceeded my expectations entirely.,5,English
+P0052,2023-02-17,Apparel,Sneakers,Casual everyday walking shoes.,479,Sold,,Broke after two days of use.,3,English
+P0053,2023-07-20,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,366,Sold,,,0,English
+P0054,2023-07-15,Appliances,Air Fryer,5-quart digital air fryer with presets.,408,Sold,,Completely useless and defective.,3,English
+P0055,2023-01-14,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,212,Sold,,Total waste of money.,3,English
+P0056,2023-07-23,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,359,Sold,,Best purchase I've made this year.,5,English
+P0057,2023-04-27,Apparel,Winter Jacket,Waterproof insulated winter coat.,300,Sold,,Great value for the price.,5,English
+P0058,2023-02-09,Apparel,Denim Jeans,Classic straight fit blue jeans.,146,Returned,Stitching bad,"Terrible quality, do not buy.",1,English
+P0059,2023-09-06,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,160,Sold,,Best purchase I've made this year.,5,English
+P0060,2023-08-31,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,91,In Transit,,Waiting for delivery...,0,English
+P0061,2023-03-24,Appliances,Blender,High-speed blender for smoothies.,404,Sold,,,0,English
+P0062,2023-08-15,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,326,Returned,Laggy UI,Total waste of money.,3,English
+P0063,2023-04-21,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,399,In Transit,,Waiting for delivery...,0,English
+P0064,2023-05-17,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,111,Sold,,Best purchase I've made this year.,5,English
+P0065,2023-12-12,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,176,In Transit,,Waiting for delivery...,0,English
+P0066,2023-02-20,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,323,Sold,,,0,English
+P0067,2023-05-26,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,99,Sold,,Broke after two days of use.,3,English
+P0068,2023-12-12,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,295,Sold,,बहुत बढ़िया प्रोडक्ट है।,4,Hindi
+P0069,2023-05-06,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,365,Returned,Leaks water,Customer service was unhelpful when I complained.,3,English
+P0070,2023-01-08,Apparel,Winter Jacket,Waterproof insulated winter coat.,312,Sold,,,0,English
+P0071,2023-07-23,Apparel,Sneakers,Casual everyday walking shoes.,48,Returned,Uncomfortable,Broke after two days of use.,1,English
+P0072,2023-11-27,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,404,In Transit,,Waiting for delivery...,0,English
+P0073,2023-10-16,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,286,In Transit,,Waiting for delivery...,0,English
+P0074,2023-05-03,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,306,Returned,Loud switches,काम ही नहीं कर रहा ठीक से।,3,Hindi
+P0075,2023-10-02,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,176,Sold,,Broke after two days of use.,3,English
+P0076,2023-01-26,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,134,Sold,,My wife loves it so much!,4,English
+P0077,2023-04-14,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,438,Sold,,,0,English
+P0078,2023-04-26,Appliances,Blender,High-speed blender for smoothies.,41,Sold,,Customer service was unhelpful when I complained.,3,English
+P0079,2023-04-07,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,181,Sold,,,0,English
+P0080,2023-11-26,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,182,Sold,,Very high quality. Will buy again.,4,English
+P0081,2023-07-12,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,137,Sold,,Works perfectly as described.,4,English
+P0082,2023-06-21,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,87,Sold,,My wife loves it so much!,4,English
+P0083,2023-01-06,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,157,Sold,,Best purchase I've made this year.,5,English
+P0084,2023-12-09,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,182,Returned,Switch broken,Total waste of money.,1,English
+P0085,2023-01-26,Appliances,Blender,High-speed blender for smoothies.,377,Sold,,Highly recommended to anyone.,5,English
+P0086,2023-09-19,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,50,Sold,,,0,English
+P0087,2023-11-15,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,433,In Transit,,Waiting for delivery...,0,English
+P0088,2023-02-08,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,455,Sold,,Customer service was unhelpful when I complained.,3,English
+P0089,2023-03-12,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,270,Returned,Shattered in transit,Broke after two days of use.,2,English
+P0090,2023-12-27,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,228,Returned,Different color,"Terrible quality, do not buy.",1,English
+P0091,2023-06-18,Apparel,Denim Jeans,Classic straight fit blue jeans.,78,Sold,,Exceeded my expectations entirely.,5,English
+P0092,2023-05-13,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,460,Sold,,Total waste of money.,3,English
+P0093,2023-04-24,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,340,Returned,Scroll wheel broken,"Terrible quality, do not buy.",3,English
+P0094,2023-01-11,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,471,Sold,,,0,English
+P0095,2023-09-08,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,274,Sold,,,0,English
+P0096,2023-02-20,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,461,Sold,,Looks cheap in person.,3,English
+P0097,2023-11-20,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,119,Sold,,,0,English
+P0098,2023-10-26,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,413,Returned,See-through,एकदम बेकार क्वालिटी है।,3,Hindi
+P0099,2023-12-25,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,431,Sold,,बहुत बढ़िया प्रोडक्ट है।,5,Hindi
+P0100,2023-08-18,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,225,Sold,,क्वालिटी काफी अच्छी है।,5,Hindi
+P0101,2023-03-03,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,131,Returned,Gets stuck,Broke after two days of use.,2,English
+P0102,2023-04-07,Appliances,Blender,High-speed blender for smoothies.,262,Sold,,,0,English
+P0103,2023-06-18,Appliances,Blender,High-speed blender for smoothies.,243,Returned,Motor burned out,"Terrible quality, do not buy.",1,English
+P0104,2023-08-01,Apparel,Sneakers,Casual everyday walking shoes.,225,Sold,,Completely useless and defective.,3,English
+P0105,2023-12-07,Appliances,Blender,High-speed blender for smoothies.,422,Sold,,,0,English
+P0106,2023-05-12,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,238,Sold,,Absolutely love this product!,4,English
+P0107,2023-08-17,Apparel,Sneakers,Casual everyday walking shoes.,174,Sold,,Super smooth and premium feel.,5,English
+P0108,2023-07-30,Apparel,Winter Jacket,Waterproof insulated winter coat.,278,Returned,Not warm enough,Looks cheap in person.,3,English
+P0109,2023-10-02,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,35,Sold,,Best purchase I've made this year.,5,English
+P0110,2023-05-14,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,31,Sold,,,0,English
+P0111,2023-04-12,Apparel,Denim Jeans,Classic straight fit blue jeans.,391,In Transit,,Waiting for delivery...,0,English
+P0112,2023-12-05,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,375,In Transit,,Waiting for delivery...,0,English
+P0113,2023-03-03,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,373,Returned,Leaks water,Completely useless and defective.,2,English
+P0114,2023-04-30,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,274,Sold,,डिलीवरी बहुत देर से आई।,3,Hindi
+P0115,2023-02-02,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,155,Sold,,Super smooth and premium feel.,5,English
+P0116,2023-03-19,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,488,Sold,,,0,English
+P0117,2023-08-23,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,481,Returned,Battery poor,एकदम बेकार क्वालिटी है।,1,Hindi
+P0118,2023-06-02,Apparel,Sneakers,Casual everyday walking shoes.,30,Sold,,Highly recommended to anyone.,4,English
+P0119,2023-12-01,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,197,Returned,Loud pump,Completely useless and defective.,2,English
+P0120,2023-08-14,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,37,In Transit,,Waiting for delivery...,0,English
+P0121,2023-08-21,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,95,In Transit,,Waiting for delivery...,0,English
+P0122,2023-01-15,Apparel,Winter Jacket,Waterproof insulated winter coat.,345,Sold,,Exceeded my expectations entirely.,5,English
+P0123,2023-08-25,Apparel,Denim Jeans,Classic straight fit blue jeans.,339,Sold,,Super smooth and premium feel.,4,English
+P0124,2023-09-06,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,326,In Transit,,Waiting for delivery...,0,English
+P0125,2023-12-03,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,440,Sold,,,0,English
+P0126,2023-05-21,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,125,Sold,,Exceeded my expectations entirely.,4,English
+P0127,2023-12-09,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,458,Sold,,एकदम बेकार क्वालिटी है।,3,Hindi
+P0128,2023-01-26,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,308,Returned,Tastes plasticy,Worst online shopping experience.,3,English
+P0129,2023-08-13,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,27,Returned,Battery poor,"Terrible quality, do not buy.",1,English
+P0130,2023-10-16,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,192,In Transit,,Waiting for delivery...,0,English
+P0131,2023-10-02,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,175,In Transit,,Waiting for delivery...,0,English
+P0132,2023-01-16,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,105,Returned,Poor elastic,Total waste of money.,2,English
+P0133,2023-08-11,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,215,Sold,,Absolutely love this product!,5,English
+P0134,2023-07-12,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,31,Returned,See-through,I regret buying this.,1,English
+P0135,2023-09-30,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,172,Sold,,Looks cheap in person.,3,English
+P0136,2023-08-09,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,416,Returned,Audio static,पैसे बर्बाद हो गए इसे खरीद कर।,1,Hindi
+P0137,2023-03-14,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,328,Returned,Loud pump,Customer service was unhelpful when I complained.,1,English
+P0138,2023-08-01,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,182,In Transit,,Waiting for delivery...,0,English
+P0139,2023-09-27,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,42,Sold,,Highly recommended to anyone.,4,English
+P0140,2023-03-07,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,326,In Transit,,Waiting for delivery...,0,English
+P0141,2023-09-28,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,185,In Transit,,Waiting for delivery...,0,English
+P0142,2023-04-21,Apparel,Sneakers,Casual everyday walking shoes.,207,In Transit,,Waiting for delivery...,0,English
+P0143,2023-11-01,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,474,Sold,,I regret buying this.,3,English
+P0144,2023-02-14,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,315,Sold,,,0,English
+P0145,2023-01-04,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,354,Returned,Scroll wheel broken,काम ही नहीं कर रहा ठीक से।,2,Hindi
+P0146,2023-01-28,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,411,Returned,Dead pixels,I regret buying this.,1,English
+P0147,2023-02-05,Appliances,Blender,High-speed blender for smoothies.,66,Returned,Motor burned out,Completely useless and defective.,3,English
+P0148,2023-11-05,Appliances,Blender,High-speed blender for smoothies.,220,Sold,,,0,English
+P0149,2023-04-07,Apparel,Winter Jacket,Waterproof insulated winter coat.,380,Sold,,Best purchase I've made this year.,5,English
+P0150,2023-09-02,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,121,Sold,,,0,English
+P0151,2023-04-08,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,137,Sold,,,0,English
+P0152,2023-10-28,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,290,Sold,,I regret buying this.,3,English
+P0153,2023-06-27,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,157,Sold,,Super smooth and premium feel.,4,English
+P0154,2023-04-12,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,315,In Transit,,Waiting for delivery...,0,English
+P0155,2023-01-29,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,228,Sold,,क्वालिटी काफी अच्छी है।,5,Hindi
+P0156,2023-10-27,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,92,Sold,,"Terrible quality, do not buy.",3,English
+P0157,2023-07-05,Apparel,Sneakers,Casual everyday walking shoes.,59,Sold,,Absolutely love this product!,4,English
+P0158,2023-05-16,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,97,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,4,Hindi
+P0159,2023-10-09,Apparel,Winter Jacket,Waterproof insulated winter coat.,306,In Transit,,Waiting for delivery...,0,English
+P0160,2023-11-22,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,24,Sold,,Completely useless and defective.,3,English
+P0161,2023-03-18,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,63,Sold,,Completely useless and defective.,3,English
+P0162,2023-01-06,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,432,Returned,Tastes plasticy,Worst online shopping experience.,3,English
+P0163,2023-01-02,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,163,Sold,,,0,English
+P0164,2023-04-21,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,481,Sold,,Great value for the price.,4,English
+P0165,2023-03-20,Apparel,Sneakers,Casual everyday walking shoes.,132,Sold,,Works perfectly as described.,4,English
+P0166,2023-02-20,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,393,Returned,Bulb flickers,Total waste of money.,1,English
+P0167,2023-08-06,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,202,Sold,,,0,English
+P0168,2023-06-21,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,197,Sold,,Broke after two days of use.,3,English
+P0169,2023-06-04,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,8,Sold,,Exceeded my expectations entirely.,4,English
+P0170,2023-09-23,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,46,Sold,,Highly recommended to anyone.,4,English
+P0171,2023-07-26,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,445,Returned,Sync issues,Completely useless and defective.,2,English
+P0172,2023-02-25,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,285,In Transit,,Waiting for delivery...,0,English
+P0173,2023-06-05,Apparel,Winter Jacket,Waterproof insulated winter coat.,59,Sold,,Very high quality. Will buy again.,5,English
+P0174,2023-10-26,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,10,Sold,,Exceeded my expectations entirely.,5,English
+P0175,2023-05-30,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,48,In Transit,,Waiting for delivery...,0,English
+P0176,2023-05-31,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,457,Sold,,Absolutely love this product!,5,English
+P0177,2023-09-29,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,234,Sold,,,0,English
+P0178,2023-07-28,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,269,Sold,,Absolutely love this product!,5,English
+P0179,2023-04-04,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,472,In Transit,,Waiting for delivery...,0,English
+P0180,2023-03-11,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,274,Returned,Shrank after wash,Worst online shopping experience.,2,English
+P0181,2023-06-12,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,388,Sold,,,0,English
+P0182,2023-07-27,Apparel,Denim Jeans,Classic straight fit blue jeans.,123,Sold,,Broke after two days of use.,3,English
+P0183,2023-08-02,Apparel,Winter Jacket,Waterproof insulated winter coat.,95,Sold,,Absolutely love this product!,4,English
+P0184,2023-04-18,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,80,Sold,,Customer service was unhelpful when I complained.,3,English
+P0185,2023-06-01,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,396,In Transit,,Waiting for delivery...,0,English
+P0186,2023-04-26,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,106,Sold,,क्वालिटी काफी अच्छी है।,5,Hindi
+P0187,2023-01-22,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,376,In Transit,,Waiting for delivery...,0,English
+P0188,2023-02-11,Appliances,Air Fryer,5-quart digital air fryer with presets.,91,Sold,,Highly recommended to anyone.,4,English
+P0189,2023-12-07,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,293,Sold,,Completely useless and defective.,3,English
+P0190,2023-08-23,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,177,Sold,,,0,English
+P0191,2023-05-13,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,92,Sold,,,0,English
+P0192,2023-03-17,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,33,Sold,,Broke after two days of use.,3,English
+P0193,2023-11-21,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,268,Returned,Gets stuck,Worst online shopping experience.,3,English
+P0194,2023-11-23,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,366,In Transit,,Waiting for delivery...,0,English
+P0195,2023-07-10,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,174,Sold,,पैसे वसूल सामान।,5,Hindi
+P0196,2023-11-27,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,19,Sold,,,0,English
+P0197,2023-03-17,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,434,Sold,,,0,English
+P0198,2023-04-06,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,280,Sold,,Exceeded my expectations entirely.,5,English
+P0199,2023-08-21,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,461,In Transit,,Waiting for delivery...,0,English
+P0200,2023-09-02,Apparel,Denim Jeans,Classic straight fit blue jeans.,367,Sold,,Broke after two days of use.,3,English
+P0201,2023-05-21,Appliances,Blender,High-speed blender for smoothies.,421,In Transit,,Waiting for delivery...,0,English
+P0202,2023-03-14,Appliances,Blender,High-speed blender for smoothies.,110,Sold,,Looks cheap in person.,3,English
+P0203,2023-02-05,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,338,Sold,,Great value for the price.,4,English
+P0204,2023-04-26,Apparel,Denim Jeans,Classic straight fit blue jeans.,428,Returned,Stitching bad,I regret buying this.,2,English
+P0205,2023-11-25,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,377,Returned,Too small,डिलीवरी बहुत देर से आई।,1,Hindi
+P0206,2023-08-28,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,116,Sold,,Works perfectly as described.,4,English
+P0207,2023-10-27,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,100,Sold,,,0,English
+P0208,2023-09-09,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,363,Sold,,Completely useless and defective.,3,English
+P0209,2023-11-29,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,225,In Transit,,Waiting for delivery...,0,English
+P0210,2023-12-06,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,325,Sold,,Highly recommended to anyone.,5,English
+P0211,2023-02-04,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,195,Sold,,"Terrible quality, do not buy.",3,English
+P0212,2023-03-25,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,403,Sold,,,0,English
+P0213,2023-02-20,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,121,Returned,Connectivity drop,एकदम बेकार क्वालिटी है।,3,Hindi
+P0214,2023-06-06,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,339,In Transit,,Waiting for delivery...,0,English
+P0215,2023-02-14,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,353,Returned,Arrived late,एकदम बेकार क्वालिटी है।,1,Hindi
+P0216,2023-08-21,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,118,Sold,,Great value for the price.,5,English
+P0217,2023-10-21,Appliances,Air Fryer,5-quart digital air fryer with presets.,476,Returned,Timer broken,Total waste of money.,1,English
+P0218,2023-09-15,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,418,Sold,,Absolutely love this product!,4,English
+P0219,2023-03-30,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,186,In Transit,,Waiting for delivery...,0,English
+P0220,2023-09-28,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,306,Sold,,,0,English
+P0221,2023-10-07,Apparel,Denim Jeans,Classic straight fit blue jeans.,132,Sold,,,0,English
+P0222,2023-03-11,Apparel,Sneakers,Casual everyday walking shoes.,8,Sold,,Exceeded my expectations entirely.,4,English
+P0223,2023-12-07,Apparel,Denim Jeans,Classic straight fit blue jeans.,266,Sold,,,0,English
+P0224,2023-04-18,Appliances,Blender,High-speed blender for smoothies.,460,Sold,,Absolutely love this product!,4,English
+P0225,2023-08-13,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,311,Sold,,,0,English
+P0226,2023-01-31,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,154,Returned,Keycap missing,Customer service was unhelpful when I complained.,3,English
+P0227,2023-02-04,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,373,Sold,,,0,English
+P0228,2023-12-12,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,267,Sold,,Total waste of money.,3,English
+P0229,2023-07-31,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,89,Sold,,,0,English
+P0230,2023-02-13,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,156,Sold,,,0,English
+P0231,2023-03-06,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,65,Returned,Laggy UI,Completely useless and defective.,3,English
+P0232,2023-07-18,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,329,Returned,Dulls fast,Broke after two days of use.,2,English
+P0233,2023-06-15,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,388,Sold,,I regret buying this.,3,English
+P0234,2023-05-06,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,272,Sold,,,0,English
+P0235,2023-03-13,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,349,In Transit,,Waiting for delivery...,0,English
+P0236,2023-12-04,Apparel,Sneakers,Casual everyday walking shoes.,264,Sold,,Best purchase I've made this year.,5,English
+P0237,2023-06-26,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,125,Sold,,Completely useless and defective.,3,English
+P0238,2023-03-07,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,313,Sold,,,0,English
+P0239,2023-05-18,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,229,Sold,,"Terrible quality, do not buy.",3,English
+P0240,2023-05-22,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,84,Returned,Defective heating,Completely useless and defective.,1,English
+P0241,2023-05-17,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,222,Returned,Gets stuck,I regret buying this.,1,English
+P0242,2023-03-27,Appliances,Blender,High-speed blender for smoothies.,332,Returned,Motor burned out,Worst online shopping experience.,1,English
+P0243,2023-08-31,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,493,Sold,,,0,English
+P0244,2023-12-07,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,271,Sold,,Worst online shopping experience.,3,English
+P0245,2023-12-08,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,330,Returned,Loud pump,Worst online shopping experience.,1,English
+P0246,2023-02-18,Appliances,Air Fryer,5-quart digital air fryer with presets.,264,Sold,,Total waste of money.,3,English
+P0247,2023-05-17,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,130,Sold,,Fast delivery and excellent packaging.,4,English
+P0248,2023-03-15,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,474,Sold,,Worst online shopping experience.,3,English
+P0249,2023-08-20,Appliances,Blender,High-speed blender for smoothies.,145,Sold,,,0,English
+P0250,2023-12-09,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,312,Sold,,,0,English
+P0251,2023-07-15,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,455,In Transit,,Waiting for delivery...,0,English
+P0252,2023-02-24,Apparel,Denim Jeans,Classic straight fit blue jeans.,211,In Transit,,Waiting for delivery...,0,English
+P0253,2023-06-13,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,415,Returned,Battery poor,I regret buying this.,3,English
+P0254,2023-06-10,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,110,Returned,Poor elastic,I regret buying this.,2,English
+P0255,2023-05-05,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,40,Sold,,Looks cheap in person.,3,English
+P0256,2023-07-06,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,263,Sold,,Absolutely love this product!,5,English
+P0257,2023-04-17,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,62,Sold,,Highly recommended to anyone.,5,English
+P0258,2023-09-30,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,431,Sold,,My wife loves it so much!,4,English
+P0259,2023-04-13,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,396,Sold,,Very high quality. Will buy again.,5,English
+P0260,2023-07-10,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,86,Sold,,My wife loves it so much!,4,English
+P0261,2023-04-18,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,60,Sold,,I regret buying this.,3,English
+P0262,2023-12-15,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,421,Sold,,Exceeded my expectations entirely.,4,English
+P0263,2023-03-19,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,225,Returned,Torn corner,Worst online shopping experience.,3,English
+P0264,2023-03-11,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,80,In Transit,,Waiting for delivery...,0,English
+P0265,2023-07-11,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,180,Sold,,Very high quality. Will buy again.,5,English
+P0266,2023-03-02,Apparel,Denim Jeans,Classic straight fit blue jeans.,463,Sold,,,0,English
+P0267,2023-04-10,Appliances,Blender,High-speed blender for smoothies.,431,Sold,,Works perfectly as described.,5,English
+P0268,2023-10-14,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,375,Sold,,Highly recommended to anyone.,5,English
+P0269,2023-07-04,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,99,Sold,,Best purchase I've made this year.,4,English
+P0270,2023-10-29,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,242,Returned,Faded color,"Terrible quality, do not buy.",2,English
+P0271,2023-12-01,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,396,In Transit,,Waiting for delivery...,0,English
+P0272,2023-07-25,Apparel,Sneakers,Casual everyday walking shoes.,191,Sold,,I regret buying this.,3,English
+P0273,2023-08-18,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,227,Sold,,Great value for the price.,4,English
+P0274,2023-11-23,Apparel,Denim Jeans,Classic straight fit blue jeans.,201,Returned,Zipper broken,काम ही नहीं कर रहा ठीक से।,2,Hindi
+P0275,2023-07-01,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,238,Sold,,,0,English
+P0276,2023-06-03,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,272,In Transit,,Waiting for delivery...,0,English
+P0277,2023-03-28,Apparel,Sneakers,Casual everyday walking shoes.,471,Returned,Scuffed out of box,I regret buying this.,1,English
+P0278,2023-05-27,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,348,Sold,,,0,English
+P0279,2023-06-14,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,257,Sold,,Worst online shopping experience.,3,English
+P0280,2023-01-16,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,157,Sold,,काम ही नहीं कर रहा ठीक से।,3,Hindi
+P0281,2023-02-01,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,178,Returned,Dead pixels,Customer service was unhelpful when I complained.,1,English
+P0282,2023-09-08,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,110,In Transit,,Waiting for delivery...,0,English
+P0283,2023-11-19,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,391,In Transit,,Waiting for delivery...,0,English
+P0284,2023-12-13,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,211,Sold,,Great value for the price.,5,English
+P0285,2024-01-01,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,196,Sold,,Fast delivery and excellent packaging.,4,English
+P0286,2023-12-09,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,122,In Transit,,Waiting for delivery...,0,English
+P0287,2023-09-01,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,326,Sold,,,0,English
+P0288,2023-12-13,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,492,Sold,,,0,English
+P0289,2023-03-03,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,323,Returned,Different color,"Terrible quality, do not buy.",1,English
+P0290,2023-11-05,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,243,Sold,,Customer service was unhelpful when I complained.,3,English
+P0291,2023-11-26,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,159,In Transit,,Waiting for delivery...,0,English
+P0292,2023-03-18,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,295,Sold,,,0,English
+P0293,2023-07-09,Apparel,Winter Jacket,Waterproof insulated winter coat.,151,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,4,Hindi
+P0294,2023-07-02,Apparel,Winter Jacket,Waterproof insulated winter coat.,18,Returned,Zipper stuck,"Terrible quality, do not buy.",2,English
+P0295,2023-06-21,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,162,In Transit,,Waiting for delivery...,0,English
+P0296,2023-07-24,Apparel,Winter Jacket,Waterproof insulated winter coat.,260,Returned,Zipper stuck,Broke after two days of use.,3,English
+P0297,2023-05-01,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,162,Sold,,Super smooth and premium feel.,4,English
+P0298,2023-12-17,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,318,In Transit,,Waiting for delivery...,0,English
+P0299,2023-06-23,Apparel,Sneakers,Casual everyday walking shoes.,30,Sold,,Customer service was unhelpful when I complained.,3,English
+P0300,2023-04-20,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,329,Returned,Poor suction,Broke after two days of use.,2,English
+P0301,2023-02-12,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,293,Sold,,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0302,2023-09-17,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,72,Sold,,Best purchase I've made this year.,5,English
+P0303,2023-07-11,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,314,Sold,,Broke after two days of use.,3,English
+P0304,2023-08-03,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,40,Returned,Damaged in transit,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0305,2023-10-18,Apparel,Denim Jeans,Classic straight fit blue jeans.,401,Sold,,I regret buying this.,3,English
+P0306,2023-03-16,Appliances,Air Fryer,5-quart digital air fryer with presets.,227,Sold,,,0,English
+P0307,2023-06-21,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,286,Sold,,Customer service was unhelpful when I complained.,3,English
+P0308,2023-10-29,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,381,Sold,,Very high quality. Will buy again.,4,English
+P0309,2023-06-26,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,328,Sold,,Customer service was unhelpful when I complained.,3,English
+P0310,2023-06-21,Appliances,Air Fryer,5-quart digital air fryer with presets.,50,In Transit,,Waiting for delivery...,0,English
+P0311,2023-05-31,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,69,Returned,Uncomfortable,Customer service was unhelpful when I complained.,2,English
+P0312,2023-08-15,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,53,Sold,,Great value for the price.,5,English
+P0313,2023-09-18,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,283,In Transit,,Waiting for delivery...,0,English
+P0314,2023-07-10,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,307,Sold,,बहुत बढ़िया प्रोडक्ट है।,4,Hindi
+P0315,2023-03-16,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,233,Sold,,,0,English
+P0316,2023-06-30,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,288,Sold,,Works perfectly as described.,4,English
+P0317,2023-01-30,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,322,Returned,Carafe cracked,Looks cheap in person.,2,English
+P0318,2023-10-31,Appliances,Blender,High-speed blender for smoothies.,20,Sold,,क्वालिटी काफी अच्छी है।,5,Hindi
+P0319,2023-04-24,Apparel,Winter Jacket,Waterproof insulated winter coat.,291,In Transit,,Waiting for delivery...,0,English
+P0320,2023-04-01,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,133,In Transit,,Waiting for delivery...,0,English
+P0321,2023-10-17,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,105,Returned,Poor suction,एकदम बेकार क्वालिटी है।,3,Hindi
+P0322,2023-11-08,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,95,Sold,,"Terrible quality, do not buy.",3,English
+P0323,2023-03-18,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,66,Sold,,Absolutely love this product!,5,English
+P0324,2023-05-28,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,477,Sold,,Fast delivery and excellent packaging.,4,English
+P0325,2023-07-25,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,229,Returned,Gets stuck,I regret buying this.,3,English
+P0326,2023-12-04,Apparel,Winter Jacket,Waterproof insulated winter coat.,173,Returned,Zipper stuck,Customer service was unhelpful when I complained.,2,English
+P0327,2023-02-02,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,417,Sold,,,0,English
+P0328,2023-09-22,Apparel,Winter Jacket,Waterproof insulated winter coat.,470,Sold,,क्वालिटी काफी अच्छी है।,5,Hindi
+P0329,2023-12-19,Apparel,Denim Jeans,Classic straight fit blue jeans.,289,In Transit,,Waiting for delivery...,0,English
+P0330,2023-03-13,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,401,Sold,,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0331,2023-06-16,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,192,Sold,,Super smooth and premium feel.,4,English
+P0332,2023-02-28,Appliances,Air Fryer,5-quart digital air fryer with presets.,137,Sold,,Looks cheap in person.,3,English
+P0333,2023-01-07,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,318,Returned,Dead pixels,Completely useless and defective.,3,English
+P0334,2023-07-19,Appliances,Blender,High-speed blender for smoothies.,438,Sold,,Fast delivery and excellent packaging.,4,English
+P0335,2023-05-31,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,111,In Transit,,Waiting for delivery...,0,English
+P0336,2023-09-30,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,202,Sold,,My wife loves it so much!,4,English
+P0337,2023-05-12,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,135,Sold,,"Terrible quality, do not buy.",3,English
+P0338,2023-04-16,Appliances,Blender,High-speed blender for smoothies.,487,Sold,,Completely useless and defective.,3,English
+P0339,2023-02-22,Apparel,Denim Jeans,Classic straight fit blue jeans.,13,Sold,,,0,English
+P0340,2023-01-31,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,462,In Transit,,Waiting for delivery...,0,English
+P0341,2023-07-14,Appliances,Blender,High-speed blender for smoothies.,361,Sold,,,0,English
+P0342,2023-05-24,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,278,In Transit,,Waiting for delivery...,0,English
+P0343,2023-02-20,Appliances,Air Fryer,5-quart digital air fryer with presets.,228,Sold,,Worst online shopping experience.,3,English
+P0344,2023-08-24,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,304,Sold,,Best purchase I've made this year.,5,English
+P0345,2023-06-19,Apparel,Winter Jacket,Waterproof insulated winter coat.,101,Sold,,Completely useless and defective.,3,English
+P0346,2023-07-03,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,215,Sold,,My wife loves it so much!,4,English
+P0347,2023-11-29,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,253,Sold,,Customer service was unhelpful when I complained.,3,English
+P0348,2023-04-23,Apparel,Winter Jacket,Waterproof insulated winter coat.,450,Sold,,Total waste of money.,3,English
+P0349,2023-06-24,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,445,Sold,,,0,English
+P0350,2023-01-05,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,203,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,5,Hindi
+P0351,2023-09-17,Apparel,Denim Jeans,Classic straight fit blue jeans.,244,Sold,,,0,English
+P0352,2023-07-21,Apparel,Sneakers,Casual everyday walking shoes.,405,Sold,,,0,English
+P0353,2024-01-01,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,118,Sold,,,0,English
+P0354,2023-07-10,Apparel,Sneakers,Casual everyday walking shoes.,310,Sold,,,0,English
+P0355,2023-05-24,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,168,In Transit,,Waiting for delivery...,0,English
+P0356,2023-05-24,Apparel,Winter Jacket,Waterproof insulated winter coat.,125,In Transit,,Waiting for delivery...,0,English
+P0357,2023-01-12,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,409,In Transit,,Waiting for delivery...,0,English
+P0358,2023-11-26,Appliances,Blender,High-speed blender for smoothies.,22,Returned,Not blending well,काम ही नहीं कर रहा ठीक से।,1,Hindi
+P0359,2023-05-21,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,336,In Transit,,Waiting for delivery...,0,English
+P0360,2023-02-21,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,286,In Transit,,Waiting for delivery...,0,English
+P0361,2023-06-18,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,244,Sold,,Best purchase I've made this year.,5,English
+P0362,2023-03-26,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,7,Sold,,,0,English
+P0363,2023-11-21,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,450,Sold,,,0,English
+P0364,2023-07-12,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,244,In Transit,,Waiting for delivery...,0,English
+P0365,2023-07-06,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,198,Sold,,Great value for the price.,5,English
+P0366,2023-01-12,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,368,Returned,Laggy UI,I regret buying this.,3,English
+P0367,2023-07-18,Apparel,Winter Jacket,Waterproof insulated winter coat.,213,Returned,Not warm enough,I regret buying this.,1,English
+P0368,2023-09-10,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,360,Sold,,डिलीवरी बहुत देर से आई।,3,Hindi
+P0369,2023-02-01,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,332,In Transit,,Waiting for delivery...,0,English
+P0370,2023-12-23,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,143,Sold,,Worst online shopping experience.,3,English
+P0371,2023-02-16,Appliances,Air Fryer,5-quart digital air fryer with presets.,12,Sold,,,0,English
+P0372,2023-03-13,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,161,Sold,,My wife loves it so much!,4,English
+P0373,2023-05-03,Appliances,Blender,High-speed blender for smoothies.,103,Sold,,एकदम बेकार क्वालिटी है।,3,Hindi
+P0374,2023-12-27,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,41,Sold,,Great value for the price.,5,English
+P0375,2023-02-21,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,22,Sold,,Very high quality. Will buy again.,4,English
+P0376,2023-01-05,Apparel,Denim Jeans,Classic straight fit blue jeans.,127,Sold,,Works perfectly as described.,5,English
+P0377,2023-09-23,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,363,In Transit,,Waiting for delivery...,0,English
+P0378,2023-05-07,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,287,Sold,,Best purchase I've made this year.,5,English
+P0379,2023-02-15,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,106,Returned,Gets stuck,डिलीवरी बहुत देर से आई।,3,Hindi
+P0380,2023-12-28,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,15,Sold,,Fast delivery and excellent packaging.,5,English
+P0381,2023-10-05,Apparel,Winter Jacket,Waterproof insulated winter coat.,225,Sold,,,0,English
+P0382,2023-06-15,Apparel,Sneakers,Casual everyday walking shoes.,132,Sold,,Absolutely love this product!,5,English
+P0383,2023-11-02,Appliances,Air Fryer,5-quart digital air fryer with presets.,30,Sold,,काम ही नहीं कर रहा ठीक से।,3,Hindi
+P0384,2023-11-21,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,334,Sold,,,0,English
+P0385,2023-02-16,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,16,In Transit,,Waiting for delivery...,0,English
+P0386,2023-05-30,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,376,Sold,,,0,English
+P0387,2023-05-07,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,1,Sold,,Highly recommended to anyone.,4,English
+P0388,2023-06-23,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,339,Returned,Poor elastic,Looks cheap in person.,1,English
+P0389,2023-07-24,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,378,Returned,Leaks water,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0390,2023-08-23,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,158,In Transit,,Waiting for delivery...,0,English
+P0391,2023-07-15,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,113,Returned,Connectivity drop,Looks cheap in person.,1,English
+P0392,2023-02-16,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,465,Sold,,Works perfectly as described.,5,English
+P0393,2023-02-23,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,372,Sold,,,0,English
+P0394,2023-02-25,Appliances,Air Fryer,5-quart digital air fryer with presets.,109,Sold,,,0,English
+P0395,2023-09-16,Apparel,Denim Jeans,Classic straight fit blue jeans.,155,Sold,,बहुत बढ़िया प्रोडक्ट है।,4,Hindi
+P0396,2023-03-28,Appliances,Air Fryer,5-quart digital air fryer with presets.,466,Sold,,Total waste of money.,3,English
+P0397,2023-04-26,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,276,Sold,,Great value for the price.,5,English
+P0398,2023-02-25,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,136,Sold,,Absolutely love this product!,5,English
+P0399,2023-04-22,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,104,Sold,,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0400,2023-03-10,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,43,Sold,,My wife loves it so much!,5,English
+P0401,2023-07-04,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,287,Sold,,My wife loves it so much!,4,English
+P0402,2023-12-07,Appliances,Blender,High-speed blender for smoothies.,378,In Transit,,Waiting for delivery...,0,English
+P0403,2023-08-19,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,251,Sold,,Absolutely love this product!,4,English
+P0404,2023-12-04,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,442,Sold,,My wife loves it so much!,4,English
+P0405,2023-03-14,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,471,In Transit,,Waiting for delivery...,0,English
+P0406,2023-06-16,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,144,In Transit,,Waiting for delivery...,0,English
+P0407,2023-08-22,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,181,Returned,Keycap missing,Worst online shopping experience.,1,English
+P0408,2023-11-05,Appliances,Air Fryer,5-quart digital air fryer with presets.,169,In Transit,,Waiting for delivery...,0,English
+P0409,2023-10-17,Appliances,Air Fryer,5-quart digital air fryer with presets.,466,Returned,Basket peels,एकदम बेकार क्वालिटी है।,1,Hindi
+P0410,2023-01-31,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,321,Sold,,Great value for the price.,4,English
+P0411,2023-01-28,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,268,Sold,,,0,English
+P0412,2023-09-15,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,408,Sold,,,0,English
+P0413,2023-08-12,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,241,Sold,,Exceeded my expectations entirely.,5,English
+P0414,2023-05-11,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,83,Sold,,Best purchase I've made this year.,4,English
+P0415,2023-09-03,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,165,Sold,,Customer service was unhelpful when I complained.,3,English
+P0416,2023-07-20,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,7,Sold,,Works perfectly as described.,4,English
+P0417,2023-06-24,Apparel,Winter Jacket,Waterproof insulated winter coat.,208,Returned,Zipper stuck,I regret buying this.,3,English
+P0418,2023-10-30,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,310,Sold,,Great value for the price.,4,English
+P0419,2023-06-23,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,216,In Transit,,Waiting for delivery...,0,English
+P0420,2023-12-13,Appliances,Blender,High-speed blender for smoothies.,35,Returned,Jar cracked,Looks cheap in person.,3,English
+P0421,2023-07-27,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,451,Sold,,I regret buying this.,3,English
+P0422,2023-03-08,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,162,Returned,Rusted quickly,I regret buying this.,1,English
+P0423,2023-04-16,Appliances,Blender,High-speed blender for smoothies.,470,In Transit,,Waiting for delivery...,0,English
+P0424,2023-09-09,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,336,Returned,Loud switches,Worst online shopping experience.,1,English
+P0425,2023-05-10,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,71,In Transit,,Waiting for delivery...,0,English
+P0426,2023-02-18,Appliances,Air Fryer,5-quart digital air fryer with presets.,0,In Transit,,Waiting for delivery...,0,English
+P0427,2023-08-31,Appliances,Blender,High-speed blender for smoothies.,181,Sold,,,0,English
+P0428,2023-08-02,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,146,Sold,,,0,English
+P0429,2023-08-04,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,273,Returned,Shattered in transit,"Terrible quality, do not buy.",2,English
+P0430,2023-05-11,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,454,Sold,,,0,English
+P0431,2023-10-16,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,316,Sold,,Best purchase I've made this year.,4,English
+P0432,2023-10-24,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,499,In Transit,,Waiting for delivery...,0,English
+P0433,2023-05-17,Apparel,Denim Jeans,Classic straight fit blue jeans.,11,Sold,,,0,English
+P0434,2023-09-17,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,185,Sold,,,0,English
+P0435,2023-10-14,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,360,Sold,,,0,English
+P0436,2023-08-25,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,262,Sold,,My wife loves it so much!,5,English
+P0437,2023-05-17,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,89,Sold,,,0,English
+P0438,2023-01-27,Apparel,Sneakers,Casual everyday walking shoes.,461,Sold,,Looks cheap in person.,3,English
+P0439,2023-05-05,Apparel,Sneakers,Casual everyday walking shoes.,70,Sold,,,0,English
+P0440,2023-05-28,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,112,Sold,,,0,English
+P0441,2023-05-13,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,378,Sold,,I regret buying this.,3,English
+P0442,2023-09-07,Apparel,Denim Jeans,Classic straight fit blue jeans.,253,Sold,,Exceeded my expectations entirely.,4,English
+P0443,2023-09-29,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,329,Returned,Chipped edge,I regret buying this.,3,English
+P0444,2023-07-22,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,61,Sold,,,0,English
+P0445,2023-07-03,Apparel,Sneakers,Casual everyday walking shoes.,436,In Transit,,Waiting for delivery...,0,English
+P0446,2023-01-28,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,3,Sold,,काम ही नहीं कर रहा ठीक से।,3,Hindi
+P0447,2023-04-11,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,295,Sold,,Great value for the price.,4,English
+P0448,2023-08-06,Apparel,Winter Jacket,Waterproof insulated winter coat.,324,Sold,,,0,English
+P0449,2023-08-05,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,27,In Transit,,Waiting for delivery...,0,English
+P0450,2023-07-18,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,288,Sold,,Exceeded my expectations entirely.,4,English
+P0451,2023-11-27,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,312,Returned,Too loose,Worst online shopping experience.,1,English
+P0452,2023-11-07,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,23,In Transit,,Waiting for delivery...,0,English
+P0453,2023-04-11,Appliances,Blender,High-speed blender for smoothies.,168,Sold,,,0,English
+P0454,2023-05-31,Apparel,Winter Jacket,Waterproof insulated winter coat.,235,Sold,,,0,English
+P0455,2023-12-27,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,120,Sold,,,0,English
+P0456,2023-08-07,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,252,Sold,,,0,English
+P0457,2023-01-18,Apparel,Winter Jacket,Waterproof insulated winter coat.,485,Sold,,,0,English
+P0458,2023-02-26,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,497,Returned,Dulls fast,Total waste of money.,2,English
+P0459,2023-05-28,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,459,In Transit,,Waiting for delivery...,0,English
+P0460,2023-06-04,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,476,Sold,,,0,English
+P0461,2023-09-29,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,351,Sold,,Fast delivery and excellent packaging.,5,English
+P0462,2023-05-06,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,122,Returned,Connectivity drop,I regret buying this.,2,English
+P0463,2023-09-27,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,382,Sold,,Absolutely love this product!,4,English
+P0464,2023-02-03,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,488,In Transit,,Waiting for delivery...,0,English
+P0465,2023-11-06,Appliances,Air Fryer,5-quart digital air fryer with presets.,275,Sold,,,0,English
+P0466,2023-03-18,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,86,Returned,Switch broken,Completely useless and defective.,2,English
+P0467,2023-05-20,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,456,Returned,Different color,I regret buying this.,1,English
+P0468,2023-12-22,Appliances,Air Fryer,5-quart digital air fryer with presets.,212,Returned,Smells like burning,Total waste of money.,1,English
+P0469,2023-09-28,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,7,Sold,,My wife loves it so much!,4,English
+P0470,2023-09-25,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,312,In Transit,,Waiting for delivery...,0,English
+P0471,2023-02-28,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,241,Returned,Dulls fast,Completely useless and defective.,3,English
+P0472,2023-04-28,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,214,Sold,,एकदम बेकार क्वालिटी है।,3,Hindi
+P0473,2023-04-09,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,87,Sold,,,0,English
+P0474,2023-12-18,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,490,Returned,Leaks water,Completely useless and defective.,1,English
+P0475,2023-08-24,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,196,In Transit,,Waiting for delivery...,0,English
+P0476,2023-04-05,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,106,Sold,,Highly recommended to anyone.,5,English
+P0477,2023-07-17,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,359,Sold,,I regret buying this.,3,English
+P0478,2023-06-28,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,282,Sold,,Super smooth and premium feel.,4,English
+P0479,2023-05-11,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,37,Sold,,,0,English
+P0480,2023-11-04,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,94,In Transit,,Waiting for delivery...,0,English
+P0481,2023-07-16,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,187,Sold,,My wife loves it so much!,5,English
+P0482,2023-09-18,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,8,Returned,Laggy UI,Customer service was unhelpful when I complained.,3,English
+P0483,2023-05-06,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,317,In Transit,,Waiting for delivery...,0,English
+P0484,2023-07-06,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,205,Sold,,,0,English
+P0485,2023-12-04,Apparel,Denim Jeans,Classic straight fit blue jeans.,498,Sold,,,0,English
+P0486,2023-11-23,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,0,Sold,,Highly recommended to anyone.,5,English
+P0487,2023-07-14,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,174,Sold,,,0,English
+P0488,2023-06-12,Apparel,Winter Jacket,Waterproof insulated winter coat.,361,Sold,,Fast delivery and excellent packaging.,4,English
+P0489,2023-09-07,Apparel,Sneakers,Casual everyday walking shoes.,44,Returned,Wrong color,Completely useless and defective.,2,English
+P0490,2023-05-03,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,187,In Transit,,Waiting for delivery...,0,English
+P0491,2023-11-14,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,336,Sold,,My wife loves it so much!,5,English
+P0492,2023-03-15,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,384,Sold,,Exceeded my expectations entirely.,5,English
+P0493,2023-03-22,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,311,In Transit,,Waiting for delivery...,0,English
+P0494,2023-09-17,Apparel,Winter Jacket,Waterproof insulated winter coat.,47,Sold,,,0,English
+P0495,2023-06-29,Apparel,Winter Jacket,Waterproof insulated winter coat.,143,In Transit,,Waiting for delivery...,0,English
+P0496,2023-06-23,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,310,Returned,Keycap missing,Completely useless and defective.,3,English
+P0497,2023-09-01,Apparel,Denim Jeans,Classic straight fit blue jeans.,340,Sold,,I regret buying this.,3,English
+P0498,2023-09-20,Apparel,Winter Jacket,Waterproof insulated winter coat.,200,Sold,,Very high quality. Will buy again.,5,English
+P0499,2023-07-31,Appliances,Air Fryer,5-quart digital air fryer with presets.,203,Sold,,,0,English
+P0500,2023-07-31,Appliances,Blender,High-speed blender for smoothies.,85,Returned,Not blending well,Broke after two days of use.,1,English
+P0501,2023-12-02,Apparel,Sneakers,Casual everyday walking shoes.,465,Sold,,Fast delivery and excellent packaging.,5,English
+P0502,2023-05-07,Appliances,Blender,High-speed blender for smoothies.,46,In Transit,,Waiting for delivery...,0,English
+P0503,2023-10-30,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,316,Sold,,I regret buying this.,3,English
+P0504,2023-06-07,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,104,Sold,,Exceeded my expectations entirely.,4,English
+P0505,2023-08-28,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,77,Sold,,,0,English
+P0506,2023-07-15,Apparel,Sneakers,Casual everyday walking shoes.,422,Sold,,,0,English
+P0507,2023-07-22,Apparel,Denim Jeans,Classic straight fit blue jeans.,170,Returned,Too tight,Total waste of money.,2,English
+P0508,2023-05-15,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,180,Sold,,Super smooth and premium feel.,4,English
+P0509,2023-01-02,Appliances,Air Fryer,5-quart digital air fryer with presets.,182,Sold,,,0,English
+P0510,2023-07-25,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,426,Returned,Damaged in transit,Customer service was unhelpful when I complained.,3,English
+P0511,2023-02-20,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,97,Sold,,Absolutely love this product!,4,English
+P0512,2023-07-20,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,167,Returned,Uneven glaze,"Terrible quality, do not buy.",3,English
+P0513,2023-08-10,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,253,In Transit,,Waiting for delivery...,0,English
+P0514,2023-05-14,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,245,Sold,,I regret buying this.,3,English
+P0515,2023-02-17,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,404,Sold,,"Terrible quality, do not buy.",3,English
+P0516,2023-03-23,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,175,Sold,,,0,English
+P0517,2023-12-21,Appliances,Blender,High-speed blender for smoothies.,299,Sold,,क्वालिटी काफी अच्छी है।,4,Hindi
+P0518,2023-01-01,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,493,Sold,,,0,English
+P0519,2023-02-18,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,88,Sold,,,0,English
+P0520,2023-11-12,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,132,Sold,,Absolutely love this product!,5,English
+P0521,2023-09-30,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,392,Sold,,Completely useless and defective.,3,English
+P0522,2023-10-09,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,224,Sold,,काम ही नहीं कर रहा ठीक से।,3,Hindi
+P0523,2023-01-29,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,128,Sold,,Completely useless and defective.,3,English
+P0524,2023-07-24,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,204,Returned,Doesn't brew hot,Completely useless and defective.,3,English
+P0525,2023-03-30,Apparel,Sneakers,Casual everyday walking shoes.,347,In Transit,,Waiting for delivery...,0,English
+P0526,2023-10-01,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,166,Sold,,Total waste of money.,3,English
+P0527,2023-11-20,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,117,Sold,,,0,English
+P0528,2023-01-01,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,297,In Transit,,Waiting for delivery...,0,English
+P0529,2023-09-01,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,184,Sold,,I regret buying this.,3,English
+P0530,2023-03-23,Apparel,Winter Jacket,Waterproof insulated winter coat.,5,Returned,Not warm enough,Total waste of money.,3,English
+P0531,2023-06-19,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,32,Sold,,Absolutely love this product!,4,English
+P0532,2023-03-11,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,168,Sold,,Worst online shopping experience.,3,English
+P0533,2023-04-09,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,95,Sold,,क्वालिटी काफी अच्छी है।,4,Hindi
+P0534,2023-04-16,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,153,Sold,,,0,English
+P0535,2023-12-30,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,197,Sold,,"Terrible quality, do not buy.",3,English
+P0536,2023-11-22,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,180,Sold,,Best purchase I've made this year.,4,English
+P0537,2023-12-09,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,114,Sold,,Great value for the price.,4,English
+P0538,2023-12-29,Appliances,Air Fryer,5-quart digital air fryer with presets.,377,Sold,,,0,English
+P0539,2023-08-03,Appliances,Blender,High-speed blender for smoothies.,11,Sold,,,0,English
+P0540,2023-03-05,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,323,In Transit,,Waiting for delivery...,0,English
+P0541,2023-12-31,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,239,In Transit,,Waiting for delivery...,0,English
+P0542,2023-09-09,Appliances,Blender,High-speed blender for smoothies.,107,Sold,,Great value for the price.,5,English
+P0543,2023-02-04,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,488,Sold,,Absolutely love this product!,5,English
+P0544,2023-03-28,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,192,In Transit,,Waiting for delivery...,0,English
+P0545,2023-02-09,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,442,Returned,Software buggy,एकदम बेकार क्वालिटी है।,2,Hindi
+P0546,2023-02-15,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,433,Returned,Sync issues,Customer service was unhelpful when I complained.,1,English
+P0547,2023-01-13,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,14,Returned,Loud pump,I regret buying this.,2,English
+P0548,2023-02-01,Apparel,Sneakers,Casual everyday walking shoes.,141,Returned,Uncomfortable,Customer service was unhelpful when I complained.,1,English
+P0549,2023-07-10,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,281,Sold,,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0550,2023-08-09,Appliances,Blender,High-speed blender for smoothies.,438,In Transit,,Waiting for delivery...,0,English
+P0551,2023-06-09,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,343,In Transit,,Waiting for delivery...,0,English
+P0552,2023-08-27,Apparel,Sneakers,Casual everyday walking shoes.,72,Sold,,बहुत बढ़िया प्रोडक्ट है।,4,Hindi
+P0553,2023-05-04,Apparel,Winter Jacket,Waterproof insulated winter coat.,265,Sold,,Works perfectly as described.,4,English
+P0554,2023-05-08,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,471,Returned,Poor suction,"Terrible quality, do not buy.",3,English
+P0555,2023-12-31,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,272,Sold,,Super smooth and premium feel.,4,English
+P0556,2023-12-09,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,312,In Transit,,Waiting for delivery...,0,English
+P0557,2023-01-28,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,190,Sold,,,0,English
+P0558,2023-02-25,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,17,Sold,,Exceeded my expectations entirely.,4,English
+P0559,2023-10-01,Apparel,Denim Jeans,Classic straight fit blue jeans.,32,Sold,,Best purchase I've made this year.,5,English
+P0560,2023-08-23,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,165,Returned,Carafe cracked,Broke after two days of use.,2,English
+P0561,2023-05-11,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,411,Sold,,Super smooth and premium feel.,5,English
+P0562,2023-11-15,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,235,Sold,,Worst online shopping experience.,3,English
+P0563,2023-03-31,Apparel,Denim Jeans,Classic straight fit blue jeans.,444,Sold,,,0,English
+P0564,2023-03-06,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,54,Sold,,Fast delivery and excellent packaging.,5,English
+P0565,2023-01-30,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,362,Sold,,,0,English
+P0566,2023-09-19,Apparel,Winter Jacket,Waterproof insulated winter coat.,281,Sold,,Works perfectly as described.,5,English
+P0567,2023-09-26,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,30,In Transit,,Waiting for delivery...,0,English
+P0568,2023-02-06,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,261,Sold,,Customer service was unhelpful when I complained.,3,English
+P0569,2023-11-27,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,413,Sold,,काम ही नहीं कर रहा ठीक से।,3,Hindi
+P0570,2023-12-26,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,499,In Transit,,Waiting for delivery...,0,English
+P0571,2023-09-30,Appliances,Air Fryer,5-quart digital air fryer with presets.,320,Sold,,,0,English
+P0572,2023-08-25,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,39,Sold,,,0,English
+P0573,2023-11-16,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,255,Sold,,,0,English
+P0574,2023-06-04,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,376,Sold,,Fast delivery and excellent packaging.,4,English
+P0575,2023-06-23,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,78,Sold,,Fast delivery and excellent packaging.,5,English
+P0576,2023-07-10,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,193,In Transit,,Waiting for delivery...,0,English
+P0577,2023-12-30,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,206,Sold,,Very high quality. Will buy again.,4,English
+P0578,2023-11-30,Apparel,Denim Jeans,Classic straight fit blue jeans.,293,Sold,,,0,English
+P0579,2023-01-10,Appliances,Air Fryer,5-quart digital air fryer with presets.,67,Sold,,Very high quality. Will buy again.,5,English
+P0580,2023-03-15,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,160,In Transit,,Waiting for delivery...,0,English
+P0581,2023-09-03,Apparel,Sneakers,Casual everyday walking shoes.,317,Sold,,Very high quality. Will buy again.,5,English
+P0582,2023-12-21,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,272,Returned,Screen scratch,Looks cheap in person.,1,English
+P0583,2023-06-23,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,120,In Transit,,Waiting for delivery...,0,English
+P0584,2023-12-06,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,170,Sold,,,0,English
+P0585,2023-09-02,Apparel,Winter Jacket,Waterproof insulated winter coat.,353,Returned,Too bulky,Looks cheap in person.,3,English
+P0586,2023-06-25,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,191,Returned,Sheds fabric,Worst online shopping experience.,3,English
+P0587,2023-07-04,Apparel,Winter Jacket,Waterproof insulated winter coat.,274,Returned,Not warm enough,"Terrible quality, do not buy.",2,English
+P0588,2023-09-03,Apparel,Denim Jeans,Classic straight fit blue jeans.,310,In Transit,,Waiting for delivery...,0,English
+P0589,2023-09-19,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,440,Sold,,,0,English
+P0590,2023-08-04,Appliances,Air Fryer,5-quart digital air fryer with presets.,204,Sold,,I regret buying this.,3,English
+P0591,2023-11-23,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,42,Sold,,Best purchase I've made this year.,5,English
+P0592,2023-10-04,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,353,In Transit,,Waiting for delivery...,0,English
+P0593,2023-12-15,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,142,In Transit,,Waiting for delivery...,0,English
+P0594,2023-03-29,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,292,In Transit,,Waiting for delivery...,0,English
+P0595,2023-12-25,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,154,Sold,,Broke after two days of use.,3,English
+P0596,2023-05-07,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,137,In Transit,,Waiting for delivery...,0,English
+P0597,2023-10-04,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,139,Sold,,Best purchase I've made this year.,4,English
+P0598,2023-02-02,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,200,Sold,,Super smooth and premium feel.,5,English
+P0599,2023-06-16,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,160,Sold,,,0,English
+P0600,2023-02-13,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,480,In Transit,,Waiting for delivery...,0,English
+P0601,2023-12-20,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,486,Sold,,Super smooth and premium feel.,4,English
+P0602,2023-12-15,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,459,In Transit,,Waiting for delivery...,0,English
+P0603,2023-05-29,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,339,Sold,,Absolutely love this product!,5,English
+P0604,2023-10-19,Apparel,Sneakers,Casual everyday walking shoes.,171,Returned,Uncomfortable,Customer service was unhelpful when I complained.,2,English
+P0605,2023-07-31,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,51,Sold,,Total waste of money.,3,English
+P0606,2023-03-29,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,203,Sold,,Total waste of money.,3,English
+P0607,2023-10-07,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,256,In Transit,,Waiting for delivery...,0,English
+P0608,2023-03-27,Apparel,Sneakers,Casual everyday walking shoes.,395,Sold,,Broke after two days of use.,3,English
+P0609,2023-05-01,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,40,In Transit,,Waiting for delivery...,0,English
+P0610,2023-09-27,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,45,In Transit,,Waiting for delivery...,0,English
+P0611,2023-04-14,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,316,Sold,,Great value for the price.,5,English
+P0612,2023-02-04,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,155,Sold,,,0,English
+P0613,2023-08-19,Appliances,Blender,High-speed blender for smoothies.,152,Returned,Jar cracked,"Terrible quality, do not buy.",3,English
+P0614,2023-03-04,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,490,Sold,,,0,English
+P0615,2023-02-08,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,379,Sold,,Works perfectly as described.,5,English
+P0616,2023-12-28,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,420,Sold,,Great value for the price.,5,English
+P0617,2023-05-19,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,479,Sold,,Absolutely love this product!,4,English
+P0618,2023-09-11,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,383,Sold,,,0,English
+P0619,2023-10-22,Appliances,Blender,High-speed blender for smoothies.,139,Sold,,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0620,2023-04-20,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,295,Sold,,,0,English
+P0621,2023-07-10,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,489,Returned,Torn corner,Looks cheap in person.,1,English
+P0622,2023-03-19,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,353,Sold,,Total waste of money.,3,English
+P0623,2023-11-19,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,36,Sold,,,0,English
+P0624,2023-07-30,Appliances,Blender,High-speed blender for smoothies.,122,In Transit,,Waiting for delivery...,0,English
+P0625,2023-07-09,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,184,Sold,,,0,English
+P0626,2023-08-23,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,360,Sold,,,0,English
+P0627,2023-02-10,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,173,Sold,,क्वालिटी काफी अच्छी है।,5,Hindi
+P0628,2023-03-27,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,377,Sold,,Super smooth and premium feel.,5,English
+P0629,2023-02-26,Appliances,Blender,High-speed blender for smoothies.,390,In Transit,,Waiting for delivery...,0,English
+P0630,2023-10-21,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,204,Sold,,Very high quality. Will buy again.,4,English
+P0631,2023-03-04,Apparel,Sneakers,Casual everyday walking shoes.,71,Returned,Uncomfortable,Broke after two days of use.,3,English
+P0632,2023-04-06,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,156,Returned,Shattered in transit,Worst online shopping experience.,1,English
+P0633,2023-04-13,Appliances,Air Fryer,5-quart digital air fryer with presets.,134,In Transit,,Waiting for delivery...,0,English
+P0634,2023-07-27,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,497,Sold,,Highly recommended to anyone.,4,English
+P0635,2023-06-18,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,7,In Transit,,Waiting for delivery...,0,English
+P0636,2023-10-29,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,261,Sold,,,0,English
+P0637,2023-02-25,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,155,Returned,Shattered in transit,एकदम बेकार क्वालिटी है।,3,Hindi
+P0638,2023-08-18,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,40,Sold,,Completely useless and defective.,3,English
+P0639,2023-11-21,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,266,Sold,,My wife loves it so much!,5,English
+P0640,2023-09-01,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,278,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,5,Hindi
+P0641,2023-03-24,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,91,Sold,,Very high quality. Will buy again.,5,English
+P0642,2023-09-17,Apparel,Winter Jacket,Waterproof insulated winter coat.,127,In Transit,,Waiting for delivery...,0,English
+P0643,2023-02-09,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,294,Sold,,Fast delivery and excellent packaging.,5,English
+P0644,2023-11-23,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,106,Sold,,,0,English
+P0645,2023-10-12,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,69,In Transit,,Waiting for delivery...,0,English
+P0646,2023-01-19,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,449,Returned,Bulb flickers,Broke after two days of use.,1,English
+P0647,2023-07-03,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,71,Sold,,Total waste of money.,3,English
+P0648,2023-12-19,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,178,Sold,,"Terrible quality, do not buy.",3,English
+P0649,2023-02-27,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,230,Returned,Poor elastic,Looks cheap in person.,1,English
+P0650,2023-12-27,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,105,Sold,,,0,English
+P0651,2023-05-11,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,94,Sold,,,0,English
+P0652,2023-07-15,Apparel,Winter Jacket,Waterproof insulated winter coat.,110,Sold,,Completely useless and defective.,3,English
+P0653,2023-01-29,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,354,Sold,,I regret buying this.,3,English
+P0654,2023-04-02,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,288,Sold,,,0,English
+P0655,2023-04-23,Apparel,Winter Jacket,Waterproof insulated winter coat.,436,Sold,,Fast delivery and excellent packaging.,4,English
+P0656,2023-12-12,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,276,Sold,,Customer service was unhelpful when I complained.,3,English
+P0657,2023-05-11,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,428,In Transit,,Waiting for delivery...,0,English
+P0658,2023-06-09,Appliances,Air Fryer,5-quart digital air fryer with presets.,300,Sold,,,0,English
+P0659,2023-02-25,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,476,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,5,Hindi
+P0660,2023-04-28,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,433,Sold,,Looks cheap in person.,3,English
+P0661,2023-03-27,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,135,Sold,,Highly recommended to anyone.,5,English
+P0662,2023-07-18,Apparel,Denim Jeans,Classic straight fit blue jeans.,364,In Transit,,Waiting for delivery...,0,English
+P0663,2023-12-20,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,131,Sold,,,0,English
+P0664,2023-07-20,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,130,Sold,,Very high quality. Will buy again.,5,English
+P0665,2023-09-04,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,32,Sold,,,0,English
+P0666,2023-08-11,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,471,Sold,,Best purchase I've made this year.,5,English
+P0667,2023-12-16,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,499,Sold,,"Terrible quality, do not buy.",3,English
+P0668,2023-11-30,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,34,Sold,,,0,English
+P0669,2023-01-31,Apparel,Denim Jeans,Classic straight fit blue jeans.,444,Sold,,,0,English
+P0670,2023-10-03,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,159,Sold,,,0,English
+P0671,2023-03-23,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,136,In Transit,,Waiting for delivery...,0,English
+P0672,2023-11-30,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,221,Sold,,Fast delivery and excellent packaging.,4,English
+P0673,2023-09-12,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,147,Sold,,Absolutely love this product!,4,English
+P0674,2023-10-26,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,450,Sold,,My wife loves it so much!,5,English
+P0675,2023-06-29,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,96,Sold,,,0,English
+P0676,2023-01-10,Apparel,Denim Jeans,Classic straight fit blue jeans.,90,Sold,,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0677,2023-10-07,Apparel,Winter Jacket,Waterproof insulated winter coat.,466,Sold,,पैसे वसूल सामान।,5,Hindi
+P0678,2023-08-22,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,162,Sold,,Broke after two days of use.,3,English
+P0679,2023-09-27,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,274,In Transit,,Waiting for delivery...,0,English
+P0680,2023-08-07,Apparel,Denim Jeans,Classic straight fit blue jeans.,35,Sold,,Super smooth and premium feel.,5,English
+P0681,2023-06-19,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,455,Sold,,,0,English
+P0682,2023-07-25,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,150,Sold,,,0,English
+P0683,2023-09-21,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,158,Sold,,Exceeded my expectations entirely.,5,English
+P0684,2023-03-19,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,426,Sold,,Fast delivery and excellent packaging.,5,English
+P0685,2023-04-24,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,202,Sold,,"Terrible quality, do not buy.",3,English
+P0686,2023-09-02,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,88,Sold,,Very high quality. Will buy again.,4,English
+P0687,2023-07-02,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,194,Sold,,Exceeded my expectations entirely.,5,English
+P0688,2023-10-03,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,288,Returned,Sheds fabric,Worst online shopping experience.,2,English
+P0689,2023-05-02,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,79,Sold,,पैसे वसूल सामान।,4,Hindi
+P0690,2023-12-24,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,440,Sold,,,0,English
+P0691,2023-04-28,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,53,Returned,Color bled,Broke after two days of use.,1,English
+P0692,2023-11-05,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,455,Sold,,I regret buying this.,3,English
+P0693,2023-11-25,Apparel,Sneakers,Casual everyday walking shoes.,459,Returned,Scuffed out of box,Total waste of money.,1,English
+P0694,2023-01-30,Appliances,Blender,High-speed blender for smoothies.,389,Sold,,My wife loves it so much!,5,English
+P0695,2023-04-20,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,242,Sold,,,0,English
+P0696,2023-10-28,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,247,In Transit,,Waiting for delivery...,0,English
+P0697,2023-04-19,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,489,In Transit,,Waiting for delivery...,0,English
+P0698,2023-02-19,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,78,Sold,,,0,English
+P0699,2023-05-14,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,476,Sold,,Looks cheap in person.,3,English
+P0700,2023-01-29,Appliances,Blender,High-speed blender for smoothies.,61,In Transit,,Waiting for delivery...,0,English
+P0701,2023-07-15,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,53,Sold,,Works perfectly as described.,5,English
+P0702,2023-12-04,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,28,Sold,,Broke after two days of use.,3,English
+P0703,2023-06-04,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,198,Returned,Carafe cracked,Completely useless and defective.,3,English
+P0704,2023-12-03,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,434,In Transit,,Waiting for delivery...,0,English
+P0705,2023-03-18,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,459,In Transit,,Waiting for delivery...,0,English
+P0706,2023-12-10,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,319,Sold,,Great value for the price.,5,English
+P0707,2023-12-02,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,381,In Transit,,Waiting for delivery...,0,English
+P0708,2023-08-25,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,471,Sold,,Works perfectly as described.,4,English
+P0709,2023-04-21,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,469,In Transit,,Waiting for delivery...,0,English
+P0710,2023-08-03,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,156,Sold,,Best purchase I've made this year.,5,English
+P0711,2023-12-03,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,41,Sold,,I regret buying this.,3,English
+P0712,2023-07-25,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,20,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,4,Hindi
+P0713,2023-08-26,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,150,Returned,Doesn't brew hot,Worst online shopping experience.,3,English
+P0714,2023-05-26,Apparel,Winter Jacket,Waterproof insulated winter coat.,1,In Transit,,Waiting for delivery...,0,English
+P0715,2023-06-03,Apparel,Sneakers,Casual everyday walking shoes.,351,Returned,Scuffed out of box,Worst online shopping experience.,1,English
+P0716,2023-10-04,Appliances,Blender,High-speed blender for smoothies.,388,In Transit,,Waiting for delivery...,0,English
+P0717,2023-05-30,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,271,Sold,,,0,English
+P0718,2023-12-10,Appliances,Blender,High-speed blender for smoothies.,324,Sold,,क्वालिटी काफी अच्छी है।,4,Hindi
+P0719,2023-10-19,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,183,Sold,,Worst online shopping experience.,3,English
+P0720,2023-02-12,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,190,Sold,,Very high quality. Will buy again.,4,English
+P0721,2023-09-13,Apparel,Sneakers,Casual everyday walking shoes.,117,Sold,,Exceeded my expectations entirely.,4,English
+P0722,2023-09-07,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,350,Sold,,Absolutely love this product!,5,English
+P0723,2023-12-02,Apparel,Winter Jacket,Waterproof insulated winter coat.,422,Sold,,,0,English
+P0724,2023-11-11,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,129,Sold,,Highly recommended to anyone.,5,English
+P0725,2023-09-20,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,471,In Transit,,Waiting for delivery...,0,English
+P0726,2023-06-16,Appliances,Blender,High-speed blender for smoothies.,454,Sold,,,0,English
+P0727,2023-02-28,Apparel,Denim Jeans,Classic straight fit blue jeans.,257,Sold,,,0,English
+P0728,2023-06-03,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,223,Sold,,Best purchase I've made this year.,4,English
+P0729,2023-11-23,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,347,Returned,Arrived late,एकदम बेकार क्वालिटी है।,1,Hindi
+P0730,2023-06-24,Apparel,Winter Jacket,Waterproof insulated winter coat.,342,In Transit,,Waiting for delivery...,0,English
+P0731,2023-06-20,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,271,In Transit,,Waiting for delivery...,0,English
+P0732,2023-04-26,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,271,Sold,,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0733,2023-02-19,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,90,Returned,Flattened quickly,"Terrible quality, do not buy.",2,English
+P0734,2023-09-03,Appliances,Air Fryer,5-quart digital air fryer with presets.,217,Sold,,क्वालिटी काफी अच्छी है।,5,Hindi
+P0735,2023-03-04,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,354,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,4,Hindi
+P0736,2023-10-30,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,222,Sold,,Fast delivery and excellent packaging.,4,English
+P0737,2023-11-02,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,247,Sold,,Absolutely love this product!,5,English
+P0738,2023-01-05,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,235,Sold,,Great value for the price.,5,English
+P0739,2023-04-30,Apparel,Sneakers,Casual everyday walking shoes.,299,In Transit,,Waiting for delivery...,0,English
+P0740,2023-07-05,Apparel,Sneakers,Casual everyday walking shoes.,35,Sold,,,0,English
+P0741,2023-03-22,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,412,Returned,Tastes plasticy,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0742,2023-05-27,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,482,Sold,,,0,English
+P0743,2023-05-16,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,89,Returned,Base unstable,Looks cheap in person.,1,English
+P0744,2023-09-23,Appliances,Air Fryer,5-quart digital air fryer with presets.,40,In Transit,,Waiting for delivery...,0,English
+P0745,2023-12-23,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,10,Sold,,Great value for the price.,4,English
+P0746,2023-05-21,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,145,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,4,Hindi
+P0747,2023-12-07,Apparel,Winter Jacket,Waterproof insulated winter coat.,472,Returned,Too bulky,I regret buying this.,1,English
+P0748,2023-08-17,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,71,In Transit,,Waiting for delivery...,0,English
+P0749,2023-09-22,Apparel,Sneakers,Casual everyday walking shoes.,452,Sold,,Customer service was unhelpful when I complained.,3,English
+P0750,2023-06-07,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,159,Returned,Laggy UI,I regret buying this.,1,English
+P0751,2023-12-10,Apparel,Winter Jacket,Waterproof insulated winter coat.,233,Returned,Too bulky,Broke after two days of use.,2,English
+P0752,2023-02-10,Apparel,Sneakers,Casual everyday walking shoes.,79,Sold,,,0,English
+P0753,2023-12-02,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,386,Sold,,Broke after two days of use.,3,English
+P0754,2023-10-31,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,337,In Transit,,Waiting for delivery...,0,English
+P0755,2023-03-26,Appliances,Air Fryer,5-quart digital air fryer with presets.,19,Sold,,क्वालिटी काफी अच्छी है।,4,Hindi
+P0756,2023-04-22,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,483,Sold,,,0,English
+P0757,2023-01-18,Apparel,Winter Jacket,Waterproof insulated winter coat.,55,Sold,,Highly recommended to anyone.,5,English
+P0758,2023-06-12,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,182,Sold,,Exceeded my expectations entirely.,5,English
+P0759,2023-03-22,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,185,Sold,,Great value for the price.,4,English
+P0760,2023-01-02,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,19,Sold,,Total waste of money.,3,English
+P0761,2023-12-28,Apparel,Winter Jacket,Waterproof insulated winter coat.,324,Returned,Not warm enough,Worst online shopping experience.,3,English
+P0762,2023-06-30,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,337,Sold,,I regret buying this.,3,English
+P0763,2023-04-09,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,132,Sold,,,0,English
+P0764,2023-11-28,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,202,Returned,Too loose,Customer service was unhelpful when I complained.,2,English
+P0765,2023-07-17,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,441,Sold,,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0766,2023-08-13,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,263,Sold,,Customer service was unhelpful when I complained.,3,English
+P0767,2023-07-12,Appliances,Blender,High-speed blender for smoothies.,223,Sold,,Looks cheap in person.,3,English
+P0768,2023-04-01,Appliances,Blender,High-speed blender for smoothies.,227,In Transit,,Waiting for delivery...,0,English
+P0769,2023-01-10,Apparel,Denim Jeans,Classic straight fit blue jeans.,241,Returned,Zipper broken,पैसे बर्बाद हो गए इसे खरीद कर।,2,Hindi
+P0770,2023-01-09,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,198,Sold,,,0,English
+P0771,2023-06-20,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,146,Sold,,Exceeded my expectations entirely.,5,English
+P0772,2023-01-25,Apparel,Denim Jeans,Classic straight fit blue jeans.,241,Sold,,Very high quality. Will buy again.,5,English
+P0773,2023-07-05,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,59,Sold,,,0,English
+P0774,2023-12-17,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,294,Sold,,,0,English
+P0775,2023-12-08,Apparel,Sneakers,Casual everyday walking shoes.,54,Sold,,I regret buying this.,3,English
+P0776,2023-05-10,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,349,Returned,See-through,Total waste of money.,1,English
+P0777,2023-08-26,Appliances,Air Fryer,5-quart digital air fryer with presets.,467,Sold,,,0,English
+P0778,2023-07-29,Apparel,Sneakers,Casual everyday walking shoes.,299,Returned,Wrong color,I regret buying this.,2,English
+P0779,2023-08-30,Apparel,Denim Jeans,Classic straight fit blue jeans.,163,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,4,Hindi
+P0780,2023-10-06,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,167,Returned,Screen scratch,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0781,2023-03-20,Apparel,Denim Jeans,Classic straight fit blue jeans.,143,Sold,,Best purchase I've made this year.,5,English
+P0782,2023-05-07,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,12,Returned,Scroll wheel broken,I regret buying this.,2,English
+P0783,2023-01-03,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,408,Sold,,,0,English
+P0784,2023-08-17,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,242,Sold,,Best purchase I've made this year.,4,English
+P0785,2023-05-24,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,337,Sold,,Super smooth and premium feel.,5,English
+P0786,2023-01-15,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,177,Sold,,एकदम बेकार क्वालिटी है।,3,Hindi
+P0787,2023-08-19,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,308,Returned,Battery dies fast,Customer service was unhelpful when I complained.,1,English
+P0788,2023-06-18,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,440,Sold,,क्वालिटी काफी अच्छी है।,4,Hindi
+P0789,2023-03-02,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,78,Sold,,Highly recommended to anyone.,4,English
+P0790,2023-06-06,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,322,Sold,,Great value for the price.,4,English
+P0791,2023-04-25,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,414,In Transit,,Waiting for delivery...,0,English
+P0792,2023-05-06,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,356,In Transit,,Waiting for delivery...,0,English
+P0793,2023-09-09,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,243,Returned,Carafe cracked,I regret buying this.,2,English
+P0794,2023-09-08,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,208,Sold,,My wife loves it so much!,4,English
+P0795,2023-06-28,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,255,Sold,,Works perfectly as described.,5,English
+P0796,2023-05-16,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,116,Sold,,Highly recommended to anyone.,4,English
+P0797,2023-08-06,Appliances,Air Fryer,5-quart digital air fryer with presets.,101,Sold,,Worst online shopping experience.,3,English
+P0798,2023-02-19,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,324,Sold,,Customer service was unhelpful when I complained.,3,English
+P0799,2023-07-23,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,191,In Transit,,Waiting for delivery...,0,English
+P0800,2023-09-23,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,137,Sold,,,0,English
+P0801,2023-07-25,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,46,Sold,,Customer service was unhelpful when I complained.,3,English
+P0802,2023-04-19,Appliances,Air Fryer,5-quart digital air fryer with presets.,237,Returned,Basket peels,Customer service was unhelpful when I complained.,2,English
+P0803,2023-01-29,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,312,Sold,,Highly recommended to anyone.,4,English
+P0804,2023-04-28,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,303,Sold,,,0,English
+P0805,2023-05-11,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,257,In Transit,,Waiting for delivery...,0,English
+P0806,2023-08-26,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,360,Sold,,बहुत बढ़िया प्रोडक्ट है।,4,Hindi
+P0807,2023-09-19,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,464,Sold,,Fast delivery and excellent packaging.,5,English
+P0808,2023-01-01,Appliances,Air Fryer,5-quart digital air fryer with presets.,270,Sold,,क्वालिटी काफी अच्छी है।,5,Hindi
+P0809,2023-03-29,Appliances,Air Fryer,5-quart digital air fryer with presets.,264,In Transit,,Waiting for delivery...,0,English
+P0810,2023-02-03,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,118,Sold,,Absolutely love this product!,4,English
+P0811,2023-07-08,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,471,In Transit,,Waiting for delivery...,0,English
+P0812,2023-12-30,Apparel,Denim Jeans,Classic straight fit blue jeans.,238,Sold,,My wife loves it so much!,4,English
+P0813,2023-12-09,Apparel,Denim Jeans,Classic straight fit blue jeans.,194,Sold,,Exceeded my expectations entirely.,4,English
+P0814,2023-05-29,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,37,Sold,,क्वालिटी काफी अच्छी है।,4,Hindi
+P0815,2023-10-28,Apparel,Winter Jacket,Waterproof insulated winter coat.,486,In Transit,,Waiting for delivery...,0,English
+P0816,2023-05-20,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,112,Returned,Tastes plasticy,Looks cheap in person.,2,English
+P0817,2023-12-11,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,38,Sold,,Great value for the price.,4,English
+P0818,2023-02-02,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,275,Returned,Sheds fabric,"Terrible quality, do not buy.",1,English
+P0819,2023-06-06,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,164,Sold,,Very high quality. Will buy again.,4,English
+P0820,2023-01-16,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,238,In Transit,,Waiting for delivery...,0,English
+P0821,2023-04-12,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,231,Sold,,पैसे वसूल सामान।,4,Hindi
+P0822,2023-11-28,Apparel,Sneakers,Casual everyday walking shoes.,460,In Transit,,Waiting for delivery...,0,English
+P0823,2023-11-05,Apparel,Denim Jeans,Classic straight fit blue jeans.,301,Returned,Stitching bad,"Terrible quality, do not buy.",3,English
+P0824,2023-08-18,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,61,Sold,,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0825,2023-04-23,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,381,Sold,,Total waste of money.,3,English
+P0826,2023-04-22,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,215,Sold,,,0,English
+P0827,2023-09-08,Appliances,Blender,High-speed blender for smoothies.,84,Sold,,Super smooth and premium feel.,5,English
+P0828,2023-09-22,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,291,In Transit,,Waiting for delivery...,0,English
+P0829,2023-01-11,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,390,Sold,,Completely useless and defective.,3,English
+P0830,2023-05-24,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,210,Returned,Faded color,Worst online shopping experience.,3,English
+P0831,2023-07-25,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,480,Sold,,Best purchase I've made this year.,4,English
+P0832,2023-08-19,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,251,Sold,,,0,English
+P0833,2023-12-25,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,105,Sold,,,0,English
+P0834,2023-01-26,Appliances,Blender,High-speed blender for smoothies.,77,Returned,Jar cracked,डिलीवरी बहुत देर से आई।,3,Hindi
+P0835,2023-07-11,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,34,Sold,,काम ही नहीं कर रहा ठीक से।,3,Hindi
+P0836,2023-05-31,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,430,Sold,,डिलीवरी बहुत देर से आई।,3,Hindi
+P0837,2023-07-26,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,327,Sold,,,0,English
+P0838,2023-03-24,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,172,Sold,,Broke after two days of use.,3,English
+P0839,2023-10-05,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,218,Sold,,Super smooth and premium feel.,5,English
+P0840,2023-12-17,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,445,Sold,,Customer service was unhelpful when I complained.,3,English
+P0841,2023-10-22,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,138,In Transit,,Waiting for delivery...,0,English
+P0842,2023-09-01,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,349,Sold,,पैसे वसूल सामान।,4,Hindi
+P0843,2023-01-08,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,82,Sold,,Best purchase I've made this year.,5,English
+P0844,2023-12-25,Appliances,Air Fryer,5-quart digital air fryer with presets.,64,Returned,Timer broken,Broke after two days of use.,1,English
+P0845,2023-03-10,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,358,Sold,,,0,English
+P0846,2023-06-24,Appliances,Blender,High-speed blender for smoothies.,214,Sold,,Exceeded my expectations entirely.,4,English
+P0847,2023-12-18,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,223,In Transit,,Waiting for delivery...,0,English
+P0848,2023-03-22,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,77,In Transit,,Waiting for delivery...,0,English
+P0849,2023-11-18,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,83,Sold,,क्वालिटी काफी अच्छी है।,5,Hindi
+P0850,2023-07-04,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,358,In Transit,,Waiting for delivery...,0,English
+P0851,2023-03-05,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,373,In Transit,,Waiting for delivery...,0,English
+P0852,2023-03-14,Apparel,Sneakers,Casual everyday walking shoes.,101,Sold,,,0,English
+P0853,2023-09-24,Appliances,Air Fryer,5-quart digital air fryer with presets.,126,Sold,,Total waste of money.,3,English
+P0854,2023-07-24,Appliances,Air Fryer,5-quart digital air fryer with presets.,261,Sold,,Total waste of money.,3,English
+P0855,2023-11-30,Apparel,Denim Jeans,Classic straight fit blue jeans.,498,Sold,,Looks cheap in person.,3,English
+P0856,2023-06-28,Appliances,Air Fryer,5-quart digital air fryer with presets.,206,Sold,,,0,English
+P0857,2023-11-13,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,471,Sold,,Exceeded my expectations entirely.,5,English
+P0858,2023-01-16,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,400,Returned,Tastes plasticy,"Terrible quality, do not buy.",1,English
+P0859,2023-02-23,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,435,Sold,,Great value for the price.,5,English
+P0860,2023-07-20,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,361,Sold,,Absolutely love this product!,4,English
+P0861,2023-09-30,Apparel,Denim Jeans,Classic straight fit blue jeans.,465,Sold,,Exceeded my expectations entirely.,5,English
+P0862,2023-08-22,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,335,Returned,Too small,काम ही नहीं कर रहा ठीक से।,1,Hindi
+P0863,2023-12-28,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,5,Sold,,डिलीवरी बहुत देर से आई।,3,Hindi
+P0864,2023-08-01,Apparel,Denim Jeans,Classic straight fit blue jeans.,121,Sold,,Super smooth and premium feel.,4,English
+P0865,2023-09-23,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,225,In Transit,,Waiting for delivery...,0,English
+P0866,2023-05-24,Apparel,Denim Jeans,Classic straight fit blue jeans.,202,Sold,,Exceeded my expectations entirely.,5,English
+P0867,2023-09-24,Apparel,Denim Jeans,Classic straight fit blue jeans.,86,Returned,Stitching bad,Customer service was unhelpful when I complained.,3,English
+P0868,2023-07-30,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,378,Sold,,,0,English
+P0869,2023-11-27,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,195,In Transit,,Waiting for delivery...,0,English
+P0870,2023-05-03,Apparel,Sneakers,Casual everyday walking shoes.,77,Sold,,काम ही नहीं कर रहा ठीक से।,3,Hindi
+P0871,2023-09-27,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,269,Sold,,Super smooth and premium feel.,5,English
+P0872,2023-12-06,Apparel,Denim Jeans,Classic straight fit blue jeans.,347,Sold,,,0,English
+P0873,2023-03-08,Appliances,Blender,High-speed blender for smoothies.,19,Sold,,,0,English
+P0874,2023-05-04,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,111,Returned,Shrank after wash,Completely useless and defective.,2,English
+P0875,2023-12-04,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,374,Sold,,Very high quality. Will buy again.,4,English
+P0876,2023-09-06,Apparel,Sneakers,Casual everyday walking shoes.,121,Sold,,Great value for the price.,5,English
+P0877,2023-06-16,Appliances,Blender,High-speed blender for smoothies.,316,Returned,Not blending well,एकदम बेकार क्वालिटी है।,1,Hindi
+P0878,2023-04-12,Apparel,Sneakers,Casual everyday walking shoes.,352,Sold,,,0,English
+P0879,2023-08-05,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,257,Sold,,I regret buying this.,3,English
+P0880,2023-01-27,Apparel,Winter Jacket,Waterproof insulated winter coat.,431,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,4,Hindi
+P0881,2023-03-23,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,297,In Transit,,Waiting for delivery...,0,English
+P0882,2023-05-22,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,420,Sold,,Absolutely love this product!,4,English
+P0883,2023-09-08,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,127,Returned,Faded color,काम ही नहीं कर रहा ठीक से।,1,Hindi
+P0884,2023-08-03,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,446,Sold,,Exceeded my expectations entirely.,5,English
+P0885,2023-07-09,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,76,Returned,Rough texture,डिलीवरी बहुत देर से आई।,2,Hindi
+P0886,2023-04-05,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,369,Sold,,Total waste of money.,3,English
+P0887,2023-04-25,Appliances,Air Fryer,5-quart digital air fryer with presets.,153,Sold,,Broke after two days of use.,3,English
+P0888,2023-12-09,Apparel,Denim Jeans,Classic straight fit blue jeans.,248,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,5,Hindi
+P0889,2023-01-25,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,79,Sold,,Works perfectly as described.,5,English
+P0890,2023-12-04,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,496,Sold,,Worst online shopping experience.,3,English
+P0891,2023-12-30,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,186,Returned,Dulls fast,पैसे बर्बाद हो गए इसे खरीद कर।,3,Hindi
+P0892,2023-03-29,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,32,Sold,,,0,English
+P0893,2023-12-01,Appliances,Blender,High-speed blender for smoothies.,144,Returned,Not blending well,Worst online shopping experience.,3,English
+P0894,2023-06-30,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,104,Sold,,Exceeded my expectations entirely.,5,English
+P0895,2023-01-08,Appliances,Air Fryer,5-quart digital air fryer with presets.,340,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,5,Hindi
+P0896,2023-02-05,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,52,Returned,Arrived late,Broke after two days of use.,2,English
+P0897,2023-05-12,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,127,In Transit,,Waiting for delivery...,0,English
+P0898,2023-12-29,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,469,Returned,Sheds fabric,Completely useless and defective.,2,English
+P0899,2023-11-10,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,375,Sold,,,0,English
+P0900,2023-10-11,Apparel,Winter Jacket,Waterproof insulated winter coat.,446,Sold,,,0,English
+P0901,2023-07-19,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,420,Sold,,My wife loves it so much!,4,English
+P0902,2023-02-01,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,294,Returned,Connectivity drop,काम ही नहीं कर रहा ठीक से।,1,Hindi
+P0903,2023-07-16,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,148,Sold,,,0,English
+P0904,2023-10-23,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,193,Sold,,,0,English
+P0905,2023-10-30,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,441,Sold,,Fast delivery and excellent packaging.,5,English
+P0906,2023-12-10,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,210,In Transit,,Waiting for delivery...,0,English
+P0907,2023-07-13,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,436,Sold,,My wife loves it so much!,4,English
+P0908,2023-01-09,Appliances,Air Fryer,5-quart digital air fryer with presets.,306,Sold,,,0,English
+P0909,2023-08-31,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,281,Sold,,,0,English
+P0910,2023-02-19,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,182,Sold,,Worst online shopping experience.,3,English
+P0911,2023-06-02,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,22,Sold,,Worst online shopping experience.,3,English
+P0912,2023-10-29,Apparel,Denim Jeans,Classic straight fit blue jeans.,77,Sold,,My wife loves it so much!,4,English
+P0913,2023-12-02,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,163,Returned,Shattered in transit,Worst online shopping experience.,1,English
+P0914,2023-03-15,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,451,Sold,,I regret buying this.,3,English
+P0915,2023-10-02,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,355,Sold,,I regret buying this.,3,English
+P0916,2023-08-29,Appliances,Air Fryer,5-quart digital air fryer with presets.,282,Sold,,Works perfectly as described.,5,English
+P0917,2023-11-11,Appliances,Blender,High-speed blender for smoothies.,67,Sold,,,0,English
+P0918,2023-04-13,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,477,Sold,,,0,English
+P0919,2023-03-31,Appliances,Blender,High-speed blender for smoothies.,62,Returned,Jar cracked,Worst online shopping experience.,2,English
+P0920,2023-07-28,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,61,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,5,Hindi
+P0921,2023-11-11,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,147,Sold,,,0,English
+P0922,2023-07-05,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,22,In Transit,,Waiting for delivery...,0,English
+P0923,2023-02-17,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,469,Returned,Doesn't brew hot,Customer service was unhelpful when I complained.,2,English
+P0924,2023-08-28,Appliances,Air Fryer,5-quart digital air fryer with presets.,462,Sold,,एकदम बेकार क्वालिटी है।,3,Hindi
+P0925,2023-06-20,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,486,Sold,,Total waste of money.,3,English
+P0926,2023-12-08,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,197,Sold,,काम ही नहीं कर रहा ठीक से।,3,Hindi
+P0927,2023-10-01,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,323,Sold,,Works perfectly as described.,4,English
+P0928,2023-01-25,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,149,Returned,Leaks water,"Terrible quality, do not buy.",2,English
+P0929,2023-02-08,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,216,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,5,Hindi
+P0930,2023-03-14,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,82,Sold,,Very high quality. Will buy again.,4,English
+P0931,2023-12-07,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,71,Sold,,बिल्कुल वैसा ही है जैसा फोटो में था।,5,Hindi
+P0932,2023-03-08,Apparel,Sneakers,Casual everyday walking shoes.,431,In Transit,,Waiting for delivery...,0,English
+P0933,2023-12-23,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,417,Sold,,Super smooth and premium feel.,5,English
+P0934,2023-05-03,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,264,In Transit,,Waiting for delivery...,0,English
+P0935,2023-02-22,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,78,Sold,,बहुत बढ़िया प्रोडक्ट है।,5,Hindi
+P0936,2023-09-27,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,462,Sold,,My wife loves it so much!,4,English
+P0937,2023-10-19,Home & Kitchen,Cotton Bedsheet,King size 400TC cotton bedsheet.,407,Sold,,Very high quality. Will buy again.,4,English
+P0938,2023-02-05,Appliances,Air Fryer,5-quart digital air fryer with presets.,98,Sold,,पैसे वसूल सामान।,4,Hindi
+P0939,2023-01-04,Apparel,Winter Jacket,Waterproof insulated winter coat.,175,Sold,,,0,English
+P0940,2023-06-01,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,303,Sold,,Worst online shopping experience.,3,English
+P0941,2023-11-08,Apparel,Sneakers,Casual everyday walking shoes.,176,Sold,,Great value for the price.,4,English
+P0942,2023-07-25,Apparel,Denim Jeans,Classic straight fit blue jeans.,361,Sold,,,0,English
+P0943,2023-03-22,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,391,Returned,Faded color,एकदम बेकार क्वालिटी है।,3,Hindi
+P0944,2023-09-09,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,480,Sold,,Works perfectly as described.,5,English
+P0945,2023-01-23,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,244,Sold,,,0,English
+P0946,2023-02-11,Apparel,Sneakers,Casual everyday walking shoes.,330,Returned,Scuffed out of box,Completely useless and defective.,1,English
+P0947,2023-09-08,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,441,Returned,Battery poor,Worst online shopping experience.,1,English
+P0948,2023-05-29,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,428,Returned,Sync issues,Customer service was unhelpful when I complained.,1,English
+P0949,2023-10-27,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,320,In Transit,,Waiting for delivery...,0,English
+P0950,2023-06-13,Apparel,Winter Jacket,Waterproof insulated winter coat.,268,Sold,,Exceeded my expectations entirely.,5,English
+P0951,2023-05-19,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,380,Sold,,एकदम बेकार क्वालिटी है।,3,Hindi
+P0952,2023-04-29,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,370,Returned,Connectivity drop,काम ही नहीं कर रहा ठीक से।,3,Hindi
+P0953,2023-08-15,Appliances,Blender,High-speed blender for smoothies.,353,Sold,,,0,English
+P0954,2023-01-14,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,20,Returned,Loud switches,Customer service was unhelpful when I complained.,3,English
+P0955,2023-12-14,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,304,In Transit,,Waiting for delivery...,0,English
+P0956,2023-01-11,Apparel,Sneakers,Casual everyday walking shoes.,337,Sold,,पैसे वसूल सामान।,4,Hindi
+P0957,2023-11-04,Apparel,Cotton T-Shirt,High-quality comfortable printed cotton t-shirt.,421,Sold,,Super smooth and premium feel.,4,English
+P0958,2023-05-11,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,248,In Transit,,Waiting for delivery...,0,English
+P0959,2023-12-24,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,375,Returned,Loud pump,Looks cheap in person.,3,English
+P0960,2023-02-27,Apparel,Winter Jacket,Waterproof insulated winter coat.,406,Sold,,,0,English
+P0961,2023-05-15,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,54,Sold,,Very high quality. Will buy again.,4,English
+P0962,2023-03-15,Appliances,Blender,High-speed blender for smoothies.,124,Returned,Motor burned out,Total waste of money.,1,English
+P0963,2023-10-09,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,123,Sold,,Absolutely love this product!,4,English
+P0964,2023-06-05,Home & Kitchen,Kitchen Knives,6-piece stainless steel chef knife block.,142,Sold,,क्वालिटी काफी अच्छी है।,5,Hindi
+P0965,2023-05-19,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,129,Sold,,My wife loves it so much!,4,English
+P0966,2023-10-20,Electronics,Gaming Keyboard,Mechanical keyboard with RGB lighting.,54,Returned,Software buggy,Looks cheap in person.,3,English
+P0967,2023-01-02,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,391,Returned,Switch broken,Looks cheap in person.,3,English
+P0968,2023-09-13,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,193,Sold,,Best purchase I've made this year.,4,English
+P0969,2023-03-31,Appliances,Blender,High-speed blender for smoothies.,48,In Transit,,Waiting for delivery...,0,English
+P0970,2023-06-08,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,295,Sold,,,0,English
+P0971,2023-03-05,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,251,Sold,,Broke after two days of use.,3,English
+P0972,2023-01-21,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,134,In Transit,,Waiting for delivery...,0,English
+P0973,2023-05-31,Apparel,Winter Jacket,Waterproof insulated winter coat.,165,Sold,,Very high quality. Will buy again.,4,English
+P0974,2023-01-25,Electronics,Wireless Mouse,Ergonomic 2.4GHz wireless mouse.,213,In Transit,,Waiting for delivery...,0,English
+P0975,2023-02-12,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,422,Sold,,My wife loves it so much!,4,English
+P0976,2023-04-24,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,158,Sold,,Exceeded my expectations entirely.,5,English
+P0977,2023-01-01,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,465,Returned,Sheds fabric,डिलीवरी बहुत देर से आई।,1,Hindi
+P0978,2023-07-27,Apparel,Winter Jacket,Waterproof insulated winter coat.,318,Sold,,Exceeded my expectations entirely.,4,English
+P0979,2023-07-04,Appliances,Drip Coffee Maker,12-cup programmable drip coffee maker with glass carafe.,279,Sold,,My wife loves it so much!,5,English
+P0980,2023-01-02,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,405,Sold,,Completely useless and defective.,3,English
+P0981,2023-11-22,Appliances,Robot Vacuum,Smart navigation robotic vacuum cleaner.,401,Returned,Battery dies fast,एकदम बेकार क्वालिटी है।,3,Hindi
+P0982,2023-07-16,Appliances,Blender,High-speed blender for smoothies.,257,Sold,,बहुत बढ़िया प्रोडक्ट है।,5,Hindi
+P0983,2023-01-27,Electronics,Bluetooth Headphones,Noise-cancelling wireless headphones with 40h battery.,224,Sold,,Total waste of money.,3,English
+P0984,2023-07-17,Home & Kitchen,Throw Pillow,Decorative velvet throw pillow.,437,Returned,Flattened quickly,Worst online shopping experience.,2,English
+P0985,2023-12-08,Apparel,Sneakers,Casual everyday walking shoes.,169,In Transit,,Waiting for delivery...,0,English
+P0986,2023-12-07,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,218,Sold,,,0,English
+P0987,2023-07-07,Home & Kitchen,Ceramic Plates Set,Set of 4 handcrafted ceramic dinner plates.,444,Returned,Uneven glaze,Customer service was unhelpful when I complained.,1,English
+P0988,2023-12-26,Appliances,Air Fryer,5-quart digital air fryer with presets.,377,Sold,,Exceeded my expectations entirely.,4,English
+P0989,2023-12-28,Appliances,Blender,High-speed blender for smoothies.,47,Sold,,,0,English
+P0990,2023-07-15,Electronics,Smart Watch,Fitness tracking smartwatch with heart rate monitor.,13,Sold,,Best purchase I've made this year.,5,English
+P0991,2023-11-19,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,371,Returned,Dead pixels,Looks cheap in person.,2,English
+P0992,2023-03-15,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,63,Sold,,Absolutely love this product!,4,English
+P0993,2023-01-20,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,60,Sold,,क्वालिटी काफी अच्छी है।,4,Hindi
+P0994,2023-08-09,Appliances,Air Fryer,5-quart digital air fryer with presets.,427,In Transit,,Waiting for delivery...,0,English
+P0995,2023-08-31,Appliances,Espresso Coffee Maker,15-bar pump espresso machine with automatic milk frother.,499,Returned,Defective heating,I regret buying this.,2,English
+P0996,2023-05-04,Home & Kitchen,Desk Lamp,LED adjustable study lamp with dimming.,474,Sold,,,0,English
+P0997,2023-10-22,Apparel,Denim Jeans,Classic straight fit blue jeans.,325,Sold,,,0,English
+P0998,2023-06-14,Appliances,Blender,High-speed blender for smoothies.,399,Sold,,Absolutely love this product!,5,English
+P0999,2023-10-05,Electronics,4K Smart TV,Ultra HD LED television with built-in streaming apps.,12,Sold,,,0,English
+P1000,2023-06-02,Apparel,Yoga Pants,Stretchy breathable activewear leggings.,69,Sold,,Worst online shopping experience.,3,English
