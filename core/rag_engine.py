@@ -16,7 +16,7 @@ class RAGEngine:
         self.model_name = "llama-3.3-70b-versatile"
         
         self.hf_token = os.getenv("HF_TOKEN")
-        self.hf_api_url = "https://router.huggingface.co/hf-inference/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+        self.hf_api_url = "https://router.huggingface.co/hf-inference/pipeline/feature-extraction/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
         
         self.pinecone_api_key = os.getenv("PINECONE_API_KEY")
         self.index_name = "ecommerce-data"
