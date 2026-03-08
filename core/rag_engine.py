@@ -36,17 +36,23 @@ class RAGEngine:
 
     def _get_embeddings(self, texts: list) -> list:
         if not self.hf_token:
-            print("Warning: HF_TOKEN not set. Embeddings will fail.")
-            return [[0.0] * 384 for _ in texts]
+            raise Exception("HF_TOKEN not set in environment variables.")
             
         headers = {"Authorization": f"Bearer {self.hf_token}"}
-        response = requests.post(self.hf_api_url, headers=headers, json={"inputs": texts, "options": {"wait_for_model": True}})
         
-        if response.status_code == 200:
-            return response.json()
-        else:
-            print(f"HF API Error: {response.text}")
-            return [[0.0] * 384 for _ in texts]
+        import time
+        for attempt in range(5):
+            response = requests.post(self.hf_api_url, headers=headers, json={"inputs": texts, "options": {"wait_for_model": True}})
+            
+            if response.status_code == 200:
+                return response.json()
+            elif response.status_code == 503:
+                print(f"HF Model loading, waiting 10s (attempt {attempt+1}/5)...")
+                time.sleep(10)
+            else:
+                raise Exception(f"HF API Error {response.status_code}: {response.text}")
+                
+        raise Exception("HF API Error: Model took too long to load.")
 
     @retry(wait=wait_exponential(multiplier=1, min=2, max=10), stop=stop_after_attempt(5))
     def _call_llm_with_retry(self, **kwargs) -> str:
