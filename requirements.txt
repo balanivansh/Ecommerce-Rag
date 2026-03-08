@@ -9,4 +9,4 @@ beautifulsoup4
 requests
 python-dotenv
 python-multipart
-pinecone-client
+pinecone
