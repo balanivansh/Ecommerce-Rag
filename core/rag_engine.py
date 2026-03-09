@@ -155,11 +155,16 @@ class RAGEngine:
         if not session_history:
             session_history = []
             
-        routing_sys = """You are a router. Classify the user query into exactly one of two categories: 'ANALYTICAL' or 'SEMANTIC'.
-- 'ANALYTICAL': Questions about counts, totals, categories, stock, or grouping (e.g., 'How many categories do we have', 'What is the total stock').
-- 'SEMANTIC': Questions about meaning, reviews, feelings, or specific problems (e.g., 'Why are shoes being returned', 'Find positive reviews').
-Only output the exact word ANALYTICAL or SEMANTIC."""
-        classification = self._call_llm(routing_sys, query).strip().upper()
+        augmented_query = query
+        if session_history:
+            history_text = "\n".join([f"{m.get('role', 'user').capitalize()}: {m.get('content', '')}" for m in session_history[-4:]])
+            augmented_query = f"Chat History:\n{history_text}\n\nLatest Query: {query}\n\n(Note: Answer or write code based on the 'Latest Query', but use 'Chat History' to resolve any 'it', 'they', or context)"
+            
+        routing_sys = """You are a router. Classify the user's 'Latest Query' into exactly one of two categories: 'ANALYTICAL' or 'SEMANTIC'.
+- 'ANALYTICAL': ONLY use this for strict mathematical numbers, counts, averages, or totals (e.g., 'How many...', 'What is the total...', 'Average rating...').
+- 'SEMANTIC': Use this for literally EVERYTHING ELSE. Reading text, finding product names, viewing categories, semantic meaning, or any general question (e.g., 'What are the categories?', 'List the returned products', 'Why are items returned').
+If in doubt, ALWAYS output SEMANTIC. Only output the exact word ANALYTICAL or SEMANTIC."""
+        classification = self._call_llm(routing_sys, augmented_query).strip().upper()
         
         context_block = ""
         
@@ -170,44 +175,62 @@ Only output the exact word ANALYTICAL or SEMANTIC."""
                 
                 schema = str(df.dtypes.to_dict())
                 
-                pandas_sys_prompt = f"""You are an elite Python Data Scientist. 
-You are given a Pandas DataFrame named `df` with this schema: {schema}
+                pandas_sys_prompt = f"""You are a world-class Python Pandas expert.
+You have a DataFrame `df` with schema: {schema}
 
-Return EXACTLY ONE LINE of pure Python Pandas code that evaluates to the answer.
-- MUST be a valid `eval()` expression.
-- NO SQL. NO Markdown. NO explanations. NO variable assignment.
-- Example: `len(df[(df['Category'] == 'Speakers') & (df['Status'] == 'Returned')])`
-- Example: `df['Price'].mean()`
-ONLY output the expression."""
+Write EXACTLY one line of Pandas code to answer the user's question.
+- Your code must evaluate directly to the answer.
+- E.g. for counts: `df['Category'].nunique()` or `len(df[df['Status'].str.contains('returned', case=False, na=False)])`
+- E.g. for naming/listing items: `df['Category'].unique().tolist()` or `df[df['Rating'] == 5]['Product Name'].tolist()[:5]`
+- E.g. for the 'most' or 'highest' item name: `df[df['Status'] == 'Returned']['Product Name'].value_counts().idxmax()` (IMPORTANT: Do not just use `.max()`, which returns the number. Use `.idxmax()` to return the actual string name of the item).
+- Use `.str.contains(..., case=False, na=False)` for searching text. 
+- ALWAYS search both `Product Name` and `Description` using `|` for product queries to avoid missing items due to singular/plural (e.g., `df['Product Name'].str.contains('knife', case=False, na=False) | df['Description'].str.contains('knife', case=False, na=False)`).
+- EXTREMELY IMPORTANT: Extract only the single most unique root keyword (e.g. search for 'knife' instead of 'kitchen knives' or 'kitchen knife') to maximize match probability.
+- Do NOT wrap your answer in ```python```. Just the raw code.
+- NO variable assignments (e.g. no `x = ...`)."""
                 
-                generated_code = self._call_llm(pandas_sys_prompt, query).strip()
+                current_code = self._call_llm(pandas_sys_prompt, augmented_query).strip()
                 
-                # Aggressive cleaning for rogue markdown or explanations
-                if "```python" in generated_code:
-                    generated_code = generated_code.split("```python")[1].split("```")[0].strip()
-                elif "```" in generated_code:
-                    generated_code = generated_code.split("```")[1].strip()
+                raw_result = None
+                error_msg = None
                 
-                if "=" in generated_code and "==" not in generated_code:
-                    # Strip bad variable assignments like `Result = df...`
-                    generated_code = generated_code.split("=")[1].strip()
+                for attempt in range(3):
+                    # Clean the code aggressively
+                    current_code = current_code.replace("```python", "").replace("```", "").strip()
+                    if current_code.lower().startswith("result = "):
+                        current_code = current_code[9:].strip()
+                    elif current_code.lower().startswith("ans = "):
+                        current_code = current_code[6:].strip()
+                        
+                    current_code = current_code.replace("][]", "]").replace("[]", "")
                     
-                local_vars = {"df": df, "pd": pd}
-                try:
-                    raw_result = eval(generated_code, {"__builtins__": {}}, local_vars)
-                    
+                    try:
+                        safe_globals = {"__builtins__": __builtins__, "df": df, "pd": pd}
+                        raw_result = eval(current_code, safe_globals)
+                        error_msg = None
+                        break  # Evaluation succeeded!
+                    except Exception as e:
+                        error_msg = str(e)
+                        print(f"[DEBUG] PANDAS ERROR: {error_msg}")
+                        # Feed the error back into the LLM for self-correction
+                        fix_prompt = f"""Your code `{current_code}` failed with Python error: {error_msg}
+Rewrite the EXACTLY ONE LINE of code to fix this. No explanations. No markdown syntax."""
+                        current_code = self._call_llm(fix_prompt, augmented_query).strip()
+                        
+                if error_msg:
+                    context_block = f"AI could not compute the answer. Last internal error: {error_msg}. Tell the user the metric could not be calculated."
+                else:
                     context_block = f"""[ANALYTICAL AGGREGATIONS]
 These are precise statistics computed directly from the tabular database. Trust these numbers absolutely.
+Question: {query}
 Result: {str(raw_result)}
-(Do not show any Python or SQL code to the user in your response. Just explain the result naturally.)"""
-                except Exception as code_error:
-                    context_block = f"AI generated invalid Pandas code: '{generated_code}'. Resulted in error: {str(code_error)}. State that the exact number could not be computed."
+(Do not show any Python or SQL code. Just answer the user's question naturally using the result above.)"""
             except Exception as e:
                 context_block = f"Critical Pandas Error: {str(e)}"
                 
         else:
             intent_sys_prompt = "Extract purely the search keywords from this user query. No formatting, no chat. Just keywords."
-            search_intent = self._call_llm(intent_sys_prompt, query)
+            search_intent = self._call_llm(intent_sys_prompt, augmented_query)
             
             if self.index:
                 query_emb = self._get_embeddings([search_intent])[0]

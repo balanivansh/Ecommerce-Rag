@@ -52,8 +52,9 @@ def _process_csv_background(task_id: str, temp_path: str):
         df = pd.read_csv(temp_path)
         eng = get_engine()
         eng.ingest_csv(df, progress_tracker=upload_tasks[task_id])
-        upload_tasks[task_id]["status"] = "completed"
-        upload_tasks[task_id]["message"] = f"Successfully ingested {len(df)} rows."
+        if upload_tasks[task_id].get("status") != "failed":
+            upload_tasks[task_id]["status"] = "completed"
+            upload_tasks[task_id]["message"] = f"Successfully ingested {len(df)} rows."
     except Exception as e:
         upload_tasks[task_id]["status"] = "failed"
         upload_tasks[task_id]["message"] = str(e)
@@ -122,6 +123,26 @@ async def run_auditor(req: AuditorReq):
         return {"status": "success", "report": report}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/api/health")
+async def check_health():
+    eng = get_engine()
+    synced = False
+    count = 0
+    try:
+        if eng.index:
+            stats = eng.index.describe_index_stats()
+            count = stats.get("total_vector_count", 0)
+            if count > 0:
+                synced = True
+    except Exception as e:
+        print(f"Health check error: {str(e)}")
+        
+    return {
+        "status": "online",
+        "vector_db_synced": synced,
+        "vector_count": count
+    }
 
 if __name__ == "__main__":
     import uvicorn

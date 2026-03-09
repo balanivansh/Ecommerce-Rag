@@ -1,0 +1,1 @@
+len(df[(df['Product Name'].str.contains('knife', case=False, na=False) | df['Description'].str.contains('knife', case=False, na=False)) & df['Status'].str.contains('returned', case=False, na=False)])

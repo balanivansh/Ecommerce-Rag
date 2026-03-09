@@ -72,9 +72,9 @@ HINDI_REVIEWS_BAD = [
     "डिलीवरी बहुत देर से आई।"
 ]
 
-STATUS_WEIGHTS = ['Sold', 'Sold', 'Sold', 'Sold', 'Returned', 'In Transit']
+STATUS_WEIGHTS = ['Sold', 'Sold', 'Sold', 'Returned', 'Returned', 'In Transit']
 
-# Generate 1000 rows
+# Generate 2000 rows
 def generate_csv(filename):
     start_date = datetime(2023, 1, 1)
     
@@ -82,7 +82,7 @@ def generate_csv(filename):
         writer = csv.writer(f)
         writer.writerow(['Product ID', 'Date', 'Category', 'Product Name', 'Description', 'Stock', 'Status', 'Return Reason', 'Review', 'Rating', 'Language'])
         
-        for i in range(1, 1001):
+        for i in range(1, 2001):
             prod_id = f"P{str(i).zfill(4)}"
             
             # Random date within last year
@@ -148,4 +148,4 @@ def generate_csv(filename):
 
 if __name__ == "__main__":
     generate_csv('sample_data.csv')
-    print("Generated 1000 rows successfully.")
+    print("Generated 2000 rows successfully.")

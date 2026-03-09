@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MessageSquare, Search, BarChart3, TrendingUp, Key, Upload, Globe, Settings, ShoppingBag, Terminal } from "lucide-react";
+import { MessageSquare, TrendingUp, Upload, Globe, ShoppingBag, Terminal, ExternalLink } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("chat");
@@ -12,36 +13,66 @@ export default function Home() {
   // Unified Chat Interface
   const [chatInput, setChatInput] = useState("");
   const [messages, setMessages] = useState<{ role: string, content: string }[]>([
-    { role: "assistant", content: "Hello! I am your AI Store Analyst. I can answer questions about your inventory, calculate return rates, or analyze customer sentiment based on your uploaded data. How can I help you today?" }
+    { role: "assistant", content: "AI Store Analyst online. Awaiting data ingestion or query..." }
   ]);
 
   // Module C
   const [scrapedTemp, setScrapedTemp] = useState<any>(null);
   const [modCResult, setModCResult] = useState<string>("");
 
+  // Custom Cursor State
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const checkHealth = async () => {
+    try {
+      const res = await fetch("http://localhost:8000/api/health");
+      if (!res.ok) return;
+      const data = await res.json();
+      if (!data.vector_db_synced) {
+        showMsg("Data Graph Uninitialized. Please Sync Data CSV.", "error");
+        setMessages([
+          { role: "assistant", content: "⚠️ SYSTEM NOTICE: The Vector Database is empty. I cannot answer general semantic questions until you upload the Store Data CSV via the 'Sync Data' action in the topology menu." }
+        ]);
+      }
+    } catch (e) {
+      console.error("Health check failed", e);
+    }
+  };
+
+  useEffect(() => {
+    checkHealth();
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  const [isDragging, setIsDragging] = useState(false);
+
   const showMsg = (text: string, type: "success" | "error" = "success") => {
     setStatusMsg({ text, type });
     setTimeout(() => setStatusMsg({ text: "", type: "" }), 5000);
   };
 
-  const uploadCSV = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files?.[0]) return;
+  const processUpload = async (file: File) => {
+    if (!file.name.endsWith(".csv")) return showMsg("Only CSV files are allowed.", "error");
+
     const formData = new FormData();
-    formData.append("file", e.target.files[0]);
+    formData.append("file", file);
 
     try {
       setLoading(true);
       showMsg("Initializing upload...", "success");
 
-      // Start background upload
-      const res = await fetch("https://ecommerce-rag.onrender.com/api/ingest/csv", {
+      const res = await fetch("http://localhost:8000/api/ingest/csv", {
         method: "POST",
         body: formData,
       });
       const data = await res.json();
 
       if (!res.ok) {
-        showMsg(data.detail, "error");
+        showMsg(data.detail || "Upload failed", "error");
         setLoading(false);
         return;
       }
@@ -49,21 +80,20 @@ export default function Home() {
       const taskId = data.task_id;
       let isDone = false;
 
-      // Poll until completed or failed
       while (!isDone) {
-        await new Promise(r => setTimeout(r, 800)); // Poll every 800ms
-
-        const statusRes = await fetch(`https://ecommerce-rag.onrender.com/api/task/status/${taskId}`);
+        await new Promise(r => setTimeout(r, 800));
+        const statusRes = await fetch(`http://localhost:8000/api/task/status/${taskId}`);
         if (!statusRes.ok) continue;
 
         const statusData = await statusRes.json();
 
         if (statusData.status === "processing") {
-          // Update toast with dynamic message from backend (e.g. "Processing 54/500...")
           setStatusMsg({ text: statusData.message || "Processing data...", type: "success" });
         } else if (statusData.status === "completed") {
           showMsg(statusData.message, "success");
           isDone = true;
+          // After successful upload, re-check health to clear the warning
+          checkHealth();
         } else if (statusData.status === "failed") {
           showMsg(statusData.message, "error");
           isDone = true;
@@ -76,11 +106,31 @@ export default function Home() {
     }
   };
 
+  const uploadCSV = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files?.[0]) processUpload(e.target.files[0]);
+  };
+
+  const onDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const onDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+  };
+
+  const onDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+    if (e.dataTransfer.files?.[0]) processUpload(e.dataTransfer.files[0]);
+  };
+
   const scrapeSite = async () => {
     if (!scrapeUrl) return;
     try {
       setLoading(true);
-      const res = await fetch("https://ecommerce-rag.onrender.com/api/ingest/scrape", {
+      const res = await fetch("http://localhost:8000/api/ingest/scrape", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url: scrapeUrl }),
@@ -104,13 +154,12 @@ export default function Home() {
     const userQuery = chatInput;
     const currentMessages = [...messages];
 
-    // Optimistic UI update
     setMessages([...currentMessages, { role: "user", content: userQuery }]);
     setChatInput("");
     setLoading(true);
 
     try {
-      const res = await fetch("https://ecommerce-rag.onrender.com/api/chat", {
+      const res = await fetch("http://localhost:8000/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: userQuery, history: currentMessages }),
@@ -133,7 +182,7 @@ export default function Home() {
     if (!scrapedTemp) return showMsg("Please scrape a URL first.", "error");
     try {
       setLoading(true);
-      const res = await fetch("https://ecommerce-rag.onrender.com/api/modules/auditor", {
+      const res = await fetch("http://localhost:8000/api/modules/auditor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ scraped_data: scrapedTemp }),
@@ -149,229 +198,275 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 font-sans selection:bg-indigo-500">
-      <div className="flex h-screen overflow-hidden">
-        {/* SIDEBAR */}
-        <div className="w-80 bg-slate-800/50 border-r border-slate-700/50 flex flex-col p-6 overflow-y-auto">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="h-10 w-10 bg-indigo-500 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
-              <ShoppingBag className="text-white" size={24} />
-            </div>
+    <div className="min-h-screen bg-black text-[#fcfcfc] font-sans selection:bg-[#d1ff26] selection:text-black overflow-hidden relative">
+
+      {/* Custom Trailing Cursor */}
+      <motion.div
+        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-[#d1ff26]/50 pointer-events-none z-[100] mix-blend-difference hidden md:block"
+        animate={{ x: mousePos.x - 16, y: mousePos.y - 16 }}
+        transition={{ type: "spring", stiffness: 200, damping: 20, mass: 0.5 }}
+      />
+      <motion.div
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-[#d1ff26] pointer-events-none z-[100] hidden md:block"
+        animate={{ x: mousePos.x - 4, y: mousePos.y - 4 }}
+        transition={{ type: "spring", stiffness: 500, damping: 25, mass: 0.1 }}
+      />
+
+      {/* Marquee Background Element */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden whitespace-nowrap opacity-[0.03] pointer-events-none z-0 user-select-none">
+        <motion.div
+          className="flex gap-8 text-[12rem] font-black font-grotesk tracking-tighter uppercase"
+          animate={{ x: [0, -2000] }}
+          transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
+        >
+          <span>INTELLIGENCE</span>
+          <span>ANALYTICS</span>
+          <span>STORE SIGHT</span>
+          <span>INTELLIGENCE</span>
+          <span>ANALYTICS</span>
+          <span>STORE SIGHT</span>
+        </motion.div>
+      </div>
+
+      <div className="flex h-screen relative z-10 p-6 gap-6">
+
+        {/* LEFT PANEL: NAVIGATION & INFRASTRUCTURE */}
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="w-80 bg-[#111] border border-[#222] rounded-[32px] flex flex-col p-8 relative overflow-hidden group"
+        >
+          {/* Subtle Glow */}
+          <div className="absolute -top-32 -left-32 w-64 h-64 bg-[#d1ff26]/5 rounded-full blur-[80px] pointer-events-none transition-opacity duration-700 opacity-50 group-hover:opacity-100" />
+
+          <div className="flex items-center gap-4 mb-16 relative z-10">
+            <motion.div
+              whileHover={{ rotate: 90 }}
+              transition={{ type: "spring", stiffness: 200, damping: 10 }}
+              className="h-12 w-12 bg-[#d1ff26] rounded-2xl flex items-center justify-center text-black"
+            >
+              <ShoppingBag size={24} strokeWidth={2.5} />
+            </motion.div>
             <div>
-              <h1 className="font-bold text-lg leading-tight tracking-tight">E-Com RAG</h1>
-              <p className="text-xs text-slate-400 font-medium tracking-wide uppercase">Intelligence Engine</p>
+              <h1 className="font-grotesk font-bold text-2xl tracking-tight leading-none text-white">StoreSight</h1>
+              <p className="text-[10px] text-[#A0A0A0] font-bold tracking-[0.2em] uppercase mt-2">Intelligence Core</p>
             </div>
           </div>
 
-          <div className="space-y-8">
-            <section>
-              <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-                <Globe size={14} /> Data Sources
-              </h2>
+          <div className="space-y-12 relative z-10 flex-1 overflow-y-auto pr-2 custom-scroll">
 
-              <div className="space-y-4">
-                <div className="flex items-center justify-between p-3 bg-slate-900/50 rounded-lg border border-slate-700/50">
-                  <span className="text-sm">Store Data Template (CSV)</span>
-                  <a
-                    href="/sample_data.csv"
-                    download
-                    className="px-3 py-1.5 rounded-md text-xs font-medium transition-colors bg-indigo-500 hover:bg-indigo-600 text-white inline-block"
-                  >
-                    Download
-                  </a>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm text-slate-300 block">Upload Orders/Returns CSV</label>
-                  <label className="flex items-center justify-center w-full p-4 border-2 border-dashed border-slate-700 rounded-xl hover:border-indigo-500 hover:bg-indigo-500/5 transition-all cursor-pointer group">
-                    <div className="flex flex-col items-center gap-2">
-                      <Upload size={20} className="text-slate-500 group-hover:text-indigo-400 transition-colors" />
-                      <span className="text-xs text-slate-400 font-medium">Click to upload</span>
-                    </div>
-                    <input type="file" accept=".csv" className="hidden" onChange={uploadCSV} />
-                  </label>
-                </div>
-
-                <div className="space-y-2 pt-2">
-                  <label className="text-sm text-slate-300 block">Audit Landing Page (URL)</label>
-                  <div className="flex gap-2">
-                    <input
-                      type="text"
-                      placeholder="https://..."
-                      value={scrapeUrl}
-                      onChange={(e) => setScrapeUrl(e.target.value)}
-                      className="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-3 text-sm focus:border-indigo-500 focus:outline-none transition-colors"
-                    />
-                    <button onClick={scrapeSite} className="bg-slate-700 hover:bg-slate-600 px-3 py-2 rounded-lg transition-colors">
-                      <Terminal size={16} />
-                    </button>
-                  </div>
-
-                  <div className="pt-4 border-t border-slate-700/50 mt-4">
-                    <label className="text-xs text-slate-400 block mb-2">Or load example targets:</label>
-                    <div className="flex flex-col gap-2">
-                      <button
-                        onClick={() => {
-                          setScrapedTemp({
-                            url: "https://www.flipkart.com/example-shirt",
-                            title: "Men's Cotton Solid Casual Shirt - Buy Online",
-                            headings: ["Product Details", "Customer Reviews", "Related Items"],
-                            description: "Buy Men's Cotton Solid Casual Shirt online at best prices. Fast Delivery, Easy Returns.",
-                            full_text: "Upgrade your wardrobe with this premium pure cotton shirt. Featuring a modern slim fit, breathable fabric, and durable stitching. Perfect for formal and casual occasions. Buy now and get 20% off on your first order. 30-day easy return policy."
-                          });
-                          showMsg("Loaded Example Flipkart Target", "success");
-                        }}
-                        className="text-left px-3 py-2 text-xs bg-slate-900 border border-slate-700 rounded-lg hover:border-indigo-500 hover:bg-indigo-500/10 transition-colors"
-                      >
-                        🛍️ Example Flipkart Product
-                      </button>
-                      <button
-                        onClick={() => {
-                          setScrapedTemp({
-                            url: "https://www.myntra.com/example-shoes",
-                            title: "Nike Air Zoom Pegasus - Running Shoes for Men",
-                            headings: ["Product Description", "Material & Care", "Reviews"],
-                            description: "Nike Air Zoom Pegasus running shoes. Experience unparalleled comfort and energy return.",
-                            full_text: "Built for speed and comfort. The Nike Air Zoom Pegasus features responsive cushioning and a breathable mesh upper. Ideal for long-distance running. Check size chart carefully before ordering small sizes."
-                          });
-                          showMsg("Loaded Example Myntra Target", "success");
-                        }}
-                        className="text-left px-3 py-2 text-xs bg-slate-900 border border-slate-700 rounded-lg hover:border-indigo-500 hover:bg-indigo-500/10 transition-colors"
-                      >
-                        👟 Example Myntra Product
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-
-        {/* MAIN CONTENT */}
-        <div className="flex-1 flex flex-col relative overflow-hidden bg-slate-900">
-
-          {/* Status Toast */}
-          {statusMsg.text && (
-            <div className={`absolute top-6 mx-auto left-0 right-0 w-max max-w-md z-50 px-4 py-3 rounded-lg shadow-xl shadow-black/20 text-sm font-medium border flex items-center gap-3 animate-in fade-in slide-in-from-top-4 ${statusMsg.type === "success" ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400" : "bg-red-500/10 border-red-500/20 text-red-400"
-              }`}>
-              <div className={`w-2 h-2 rounded-full ${statusMsg.type === 'success' ? 'bg-emerald-400' : 'bg-red-400'} animate-pulse`} />
-              {statusMsg.text}
-            </div>
-          )}
-
-          {/* Fixed Header with Navigation */}
-          <div className="px-8 pt-8 pb-4 border-b border-slate-800">
-            <h1 className="text-2xl font-bold mb-6 tracking-tight">Business Intelligence Dashboard</h1>
-            <div className="flex gap-2">
+            {/* View Toggle */}
+            <div className="flex flex-col gap-2">
+              <h2 className="text-[10px] font-bold text-[#666] uppercase tracking-[0.2em] mb-2">Modules</h2>
               {[
-                { id: "chat", label: "AI Store Analyst", icon: MessageSquare },
-                { id: "business", label: "SEO & Growth", icon: TrendingUp },
+                { id: "chat", label: "AI Analyst", icon: MessageSquare },
+                { id: "business", label: "SEO Audit", icon: TrendingUp },
               ].map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === tab.id
-                    ? "bg-indigo-500 text-white shadow-lg shadow-indigo-500/20"
-                    : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                  className={`flex items-center gap-3 px-5 py-4 rounded-2xl text-sm font-bold transition-all duration-300 ${activeTab === tab.id
+                    ? "bg-[#222] text-[#d1ff26] border border-[#333]"
+                    : "text-[#888] hover:bg-[#1A1A1A] hover:text-white border border-transparent"
                     }`}
                 >
-                  <tab.icon size={16} />
+                  <tab.icon size={18} strokeWidth={activeTab === tab.id ? 2.5 : 2} />
                   {tab.label}
                 </button>
               ))}
             </div>
-          </div>
 
-          {/* Scrollable Content Area */}
-          <div className="flex-1 overflow-y-auto p-8 relative">
+            {/* Infrastructure Source */}
+            <div className="space-y-6">
+              <h2 className="text-[10px] font-bold text-[#666] uppercase tracking-[0.2em]">Data Topology</h2>
 
-            {/* Loading Overlay */}
-            {loading && (
-              <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm z-40 flex items-center justify-center">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="w-10 h-10 border-4 border-indigo-500/20 border-t-indigo-500 rounded-full animate-spin" />
-                  <span className="text-sm font-medium text-slate-300 animate-pulse">Running analysis...</span>
+              {/* CSV Upload */}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-[#A0A0A0] font-medium">Vector Graph (CSV)</span>
+                  <a href="/sample_data.csv" download className="text-[#d1ff26] hover:text-white transition-colors">
+                    <ExternalLink size={14} />
+                  </a>
+                </div>
+                <label
+                  onDragOver={onDragOver}
+                  onDragLeave={onDragLeave}
+                  onDrop={onDrop}
+                  className={`flex flex-col items-center justify-center w-full p-6 border ${isDragging ? "border-solid border-[#d1ff26] bg-[#d1ff26]/10" : "border-dashed border-[#333]"} rounded-2xl hover:border-[#d1ff26] hover:bg-[#d1ff26]/5 transition-all duration-300 cursor-pointer group`}
+                >
+                  <div className="flex flex-col items-center gap-3">
+                    <motion.div animate={isDragging ? { y: -10, scale: 1.1 } : { y: 0, scale: 1 }} transition={{ type: "spring" }}>
+                      <Upload size={24} className={`${isDragging ? "text-[#d1ff26]" : "text-[#666]"} group-hover:text-[#d1ff26] transition-colors`} />
+                    </motion.div>
+                    <span className="text-xs text-[#888] font-bold uppercase tracking-wider group-hover:text-white transition-colors">
+                      {isDragging ? "Drop to Upload" : "Drag & Drop or Click"}
+                    </span>
+                  </div>
+                  <input type="file" accept=".csv" className="hidden" onChange={uploadCSV} />
+                </label>
+              </div>
+
+              {/* Scraper Input */}
+              <div className="space-y-3 pt-6 border-t border-[#222]">
+                <span className="text-xs text-[#A0A0A0] font-medium">Competitor Page Target</span>
+                <div className="flex bg-[#0A0A0A] border border-[#222] rounded-2xl overflow-hidden focus-within:border-[#d1ff26] transition-colors">
+                  <input
+                    type="text"
+                    placeholder="https://..."
+                    value={scrapeUrl}
+                    onChange={(e) => setScrapeUrl(e.target.value)}
+                    className="flex-1 bg-transparent px-4 py-3 text-sm text-white focus:outline-none placeholder-[#444]"
+                  />
+                  <button onClick={scrapeSite} className="bg-[#1A1A1A] hover:bg-[#d1ff26] hover:text-black transition-colors px-4 text-[#888]">
+                    <Terminal size={16} />
+                  </button>
                 </div>
               </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* RIGHT PANEL: MAIN INTERFACE */}
+        <div className="flex-1 flex flex-col relative h-full">
+
+          {/* Status Notifications */}
+          <AnimatePresence>
+            {statusMsg.text && (
+              <motion.div
+                initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                className={`absolute top-0 right-0 z-50 px-6 py-4 rounded-2xl shadow-2xl backdrop-blur-xl border flex items-center gap-4 text-sm font-bold tracking-wide ${statusMsg.type === "success" ? "bg-[#d1ff26]/10 border-[#d1ff26]/30 text-[#d1ff26]" : "bg-red-500/10 border-red-500/30 text-red-500"
+                  }`}
+              >
+                <div className={`w-2 h-2 rounded-full ${statusMsg.type === 'success' ? 'bg-[#d1ff26]' : 'bg-red-500'} animate-pulse`} />
+                {statusMsg.text}
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <AnimatePresence mode="wait">
+
+            {/* --- CHAT INTERFACE --- */}
+            {activeTab === "chat" && (
+              <motion.div
+                key="chat"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col h-full pl-6"
+              >
+                <div className="mb-8">
+                  <h2 className="text-6xl font-black font-grotesk tracking-tighter text-white">System <span className="text-[#d1ff26]">Query.</span></h2>
+                  <p className="text-[#888] mt-2 font-medium">Ask natural language questions against your data graph.</p>
+                </div>
+
+                <div className="flex-1 bg-[#111]/50 backdrop-blur-3xl border border-[#222] rounded-[32px] overflow-hidden flex flex-col relative shadow-2xl">
+
+                  {loading && (
+                    <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-40 flex items-center justify-center">
+                      <div className="w-16 h-16 border-4 border-[#333] border-t-[#d1ff26] rounded-full animate-spin" />
+                    </div>
+                  )}
+
+                  <div className="flex-1 overflow-y-auto p-8 space-y-8 custom-scroll">
+                    {messages.map((msg, idx) => (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                        key={idx}
+                        className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                      >
+                        <div className={`max-w-[75%] rounded-3xl p-6 ${msg.role === "user"
+                          ? "bg-[#d1ff26] text-black rounded-br-sm shadow-[0_10px_40px_rgba(209,255,38,0.15)]"
+                          : "bg-[#1A1A1A] text-[#dedede] rounded-bl-sm border border-[#333]"
+                          }`}>
+                          <p className={`text-base leading-relaxed ${msg.role === "user" ? "font-bold" : "font-medium"} whitespace-pre-wrap`}>
+                            {msg.content}
+                          </p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  <div className="p-4 bg-[#111]">
+                    <form onSubmit={sendMessage} className="relative flex items-center">
+                      <div className="absolute left-6 text-[#666]">
+                        <Terminal size={20} />
+                      </div>
+                      <input
+                        type="text"
+                        className="w-full bg-[#1A1A1A] border border-[#333] rounded-[24px] pl-14 pr-32 py-5 text-white placeholder-[#666] focus:outline-none focus:border-[#d1ff26] transition-colors font-medium text-lg shadow-inner"
+                        placeholder="Type your command..."
+                        value={chatInput}
+                        onChange={(e) => setChatInput(e.target.value)}
+                        disabled={loading}
+                      />
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        type="submit"
+                        disabled={loading || !chatInput.trim()}
+                        className="absolute right-3 bg-[#d1ff26] hover:bg-white text-black px-6 py-3 rounded-[16px] font-bold tracking-wide disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        EXECUTE
+                      </motion.button>
+                    </form>
+                  </div>
+                </div>
+              </motion.div>
             )}
 
-            {/* MODULE A/B: Unified Chat Interface */}
-            {activeTab === "chat" && (
-              <div className="max-w-4xl mx-auto h-[calc(100vh-140px)] flex flex-col animate-in fade-in slide-in-from-bottom-4 duration-500">
-                {/* Chat Messages Area */}
-                <div className="flex-1 bg-slate-800/30 border border-slate-700/50 rounded-t-2xl p-6 overflow-y-auto space-y-4">
-                  {messages.map((msg, idx) => (
-                    <div key={idx} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
-                      <div className={`max-w-[80%] rounded-2xl px-5 py-3 ${msg.role === "user"
-                        ? "bg-indigo-500 text-white rounded-br-none"
-                        : "bg-slate-700/50 text-slate-200 rounded-bl-none border border-slate-600/50"
-                        }`}>
-                        <p className="text-sm leading-relaxed whitespace-pre-wrap">{msg.content}</p>
-                      </div>
-                    </div>
-                  ))}
-                  {loading && (
-                    <div className="flex justify-start">
-                      <div className="bg-slate-700/50 rounded-2xl rounded-bl-none px-5 py-3 border border-slate-600/50 flex space-x-1">
-                        <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce" />
-                        <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce delay-75" />
-                        <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce delay-150" />
-                      </div>
+            {/* --- AUDITOR INTERFACE --- */}
+            {activeTab === "business" && (
+              <motion.div
+                key="business"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col h-full pl-6"
+              >
+                <div className="mb-8 flex justify-between items-end">
+                  <div>
+                    <h2 className="text-6xl font-black font-grotesk tracking-tighter text-white">Competitor <span className="text-[#d1ff26]">Audit.</span></h2>
+                    <p className="text-[#888] mt-2 font-medium">
+                      {scrapedTemp ? `Target Locked: ${scrapedTemp.url}` : "Awaiting Target Acquisition..."}
+                    </p>
+                  </div>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={runModC}
+                    disabled={!scrapedTemp || loading}
+                    className={`px-8 py-4 rounded-[20px] font-black uppercase tracking-wider transition-all ${scrapedTemp ? 'bg-[#d1ff26] text-black shadow-[0_10px_40px_rgba(209,255,38,0.2)]' : 'bg-[#222] text-[#555] cursor-not-allowed'}`}
+                  >
+                    {loading ? "Analyzing..." : "Run Audit Sequence"}
+                  </motion.button>
+                </div>
+
+                <div className="flex-1 bg-[#1A1A1A]/80 backdrop-blur-xl border border-[#333] rounded-[32px] p-10 overflow-y-auto custom-scroll relative">
+                  {modCResult ? (
+                    <motion.div
+                      initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                      className="prose prose-invert max-w-none prose-p:text-[#CCC] prose-headings:text-white prose-headings:font-grotesk prose-strong:text-[#d1ff26]"
+                    >
+                      <pre className="font-sans whitespace-pre-wrap leading-loose text-[15px]">{modCResult}</pre>
+                    </motion.div>
+                  ) : (
+                    <div className="h-full flex flex-col items-center justify-center text-[#444] space-y-6">
+                      <Globe size={64} strokeWidth={1} />
+                      <p className="text-lg font-medium tracking-wide">NO DATA EXTRACTED.</p>
                     </div>
                   )}
                 </div>
-
-                {/* Chat Input Area */}
-                <div className="bg-slate-800 border border-slate-700/50 rounded-b-2xl p-4">
-                  <form onSubmit={sendMessage} className="flex gap-3">
-                    <input
-                      type="text"
-                      className="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-all placeholder-slate-500"
-                      placeholder="Ask about inventory, returns, or sentiment..."
-                      value={chatInput}
-                      onChange={(e) => setChatInput(e.target.value)}
-                      disabled={loading}
-                    />
-                    <button
-                      type="submit"
-                      disabled={loading || !chatInput.trim()}
-                      className="bg-indigo-500 hover:bg-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed text-white px-6 py-3 rounded-xl font-medium text-sm transition-all shadow-lg shadow-indigo-500/20 flex items-center gap-2"
-                    >
-                      <Terminal size={18} />
-                      Ask Analyst
-                    </button>
-                  </form>
-                </div>
-              </div>
-            )}
-            {/* MODULE C: Business Auditor */}
-            {activeTab === "business" && (
-              <div className="max-w-4xl mx-auto space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                <div className="flex items-center justify-between bg-slate-800/30 border border-slate-700/50 rounded-2xl p-6">
-                  <div>
-                    <h2 className="text-lg font-semibold mb-1">SEO & Page Metrics</h2>
-                    <p className="text-sm text-slate-400">
-                      {scrapedTemp ? `Target: ${scrapedTemp.url}` : "No page target scraped yet. Start in sidebar."}
-                    </p>
-                  </div>
-                  <button onClick={runModC} disabled={!scrapedTemp} className={`px-6 py-3 rounded-xl font-medium transition-all ${scrapedTemp ? 'bg-indigo-500 hover:bg-indigo-600 shadow-lg shadow-indigo-500/20' : 'bg-slate-800 text-slate-500 cursor-not-allowed'
-                    }`}>
-                    Audit Architecture
-                  </button>
-                </div>
-
-                {modCResult && (
-                  <div className="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8 animate-in fade-in">
-                    <div className="prose prose-invert prose-slate max-w-none prose-headings:text-indigo-300 prose-a:text-indigo-400 prose-strong:text-emerald-400">
-                      <pre className="whitespace-pre-wrap font-sans text-sm text-slate-300 leading-loose">{modCResult}</pre>
-                    </div>
-                  </div>
-                )}
-              </div>
+              </motion.div>
             )}
 
-          </div>
+          </AnimatePresence>
         </div>
       </div>
     </div>
