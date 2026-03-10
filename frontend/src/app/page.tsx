@@ -10,6 +10,10 @@ export default function Home() {
   const [statusMsg, setStatusMsg] = useState({ text: "", type: "" });
   const [loading, setLoading] = useState(false);
 
+  // Server Status for Lazy Wake-up
+  const [serverStatus, setServerStatus] = useState<"waking" | "online" | "offline">("waking");
+  const [serverStatusText, setServerStatusText] = useState("Waking up server...");
+
   // Unified Chat Interface
   const [chatInput, setChatInput] = useState("");
   const [messages, setMessages] = useState<{ role: string, content: string }[]>([
@@ -22,6 +26,45 @@ export default function Home() {
 
   // Custom Cursor State
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  // Lazy Wake-up Effect
+  const wakeUpServer = async () => {
+    setServerStatus("waking");
+    setServerStatusText("Waking up server...");
+    
+    const maxRetries = 10;
+    const retryDelay = 2000; // 2 seconds
+    
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        setServerStatusText(`Waking up server... (${attempt}/${maxRetries})`);
+        
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/ping`, {
+          method: "GET",
+          signal: AbortSignal.timeout(5000) // 5 second timeout
+        });
+        
+        if (res.ok) {
+          const data = await res.json();
+          if (data.status === "ok") {
+            setServerStatus("online");
+            setServerStatusText("Server online");
+            return true;
+          }
+        }
+      } catch (error) {
+        console.log(`Wake-up attempt ${attempt} failed:`, error);
+      }
+      
+      if (attempt < maxRetries) {
+        await new Promise(resolve => setTimeout(resolve, retryDelay));
+      }
+    }
+    
+    setServerStatus("offline");
+    setServerStatusText("Server unavailable - please try again later");
+    return false;
+  };
 
   const checkHealth = async () => {
     try {
@@ -40,7 +83,14 @@ export default function Home() {
   };
 
   useEffect(() => {
-    checkHealth();
+    // Start wake-up process immediately
+    wakeUpServer().then(success => {
+      if (success) {
+        // Only check health if server is awake
+        checkHealth();
+      }
+    });
+    
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });
     };
@@ -57,6 +107,16 @@ export default function Home() {
 
   const processUpload = async (file: File) => {
     if (!file.name.endsWith(".csv")) return showMsg("Only CSV files are allowed.", "error");
+
+    // Prevent upload if server is not online
+    if (serverStatus !== 'online') {
+      if (serverStatus === 'waking') {
+        showMsg("Server is waking up. Please wait a moment...", "error");
+      } else {
+        showMsg("Server is unavailable. Please refresh the page.", "error");
+      }
+      return;
+    }
 
     const formData = new FormData();
     formData.append("file", file);
@@ -128,6 +188,17 @@ export default function Home() {
 
   const scrapeSite = async () => {
     if (!scrapeUrl) return;
+
+    // Prevent scraping if server is not online
+    if (serverStatus !== 'online') {
+      if (serverStatus === 'waking') {
+        showMsg("Server is waking up. Please wait a moment...", "error");
+      } else {
+        showMsg("Server is unavailable. Please refresh the page.", "error");
+      }
+      return;
+    }
+
     try {
       setLoading(true);
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/ingest/scrape`, {
@@ -150,6 +221,16 @@ export default function Home() {
   const sendMessage = async (e?: React.FormEvent) => {
     e?.preventDefault();
     if (!chatInput.trim()) return;
+
+    // Prevent RAG queries if server is not online
+    if (serverStatus !== 'online') {
+      if (serverStatus === 'waking') {
+        showMsg("Server is waking up. Please wait a moment...", "error");
+      } else {
+        showMsg("Server is unavailable. Please refresh the page.", "error");
+      }
+      return;
+    }
 
     const userQuery = chatInput;
     const currentMessages = [...messages];
@@ -240,7 +321,7 @@ export default function Home() {
           {/* Subtle Glow */}
           <div className="absolute -top-32 -left-32 w-64 h-64 bg-[#d1ff26]/5 rounded-full blur-[80px] pointer-events-none transition-opacity duration-700 opacity-50 group-hover:opacity-100" />
 
-          <div className="flex items-center gap-4 mb-16 relative z-10">
+          <div className="flex items-center gap-4 mb-8 relative z-10">
             <motion.div
               whileHover={{ rotate: 90 }}
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
@@ -248,9 +329,29 @@ export default function Home() {
             >
               <ShoppingBag size={24} strokeWidth={2.5} />
             </motion.div>
-            <div>
+            <div className="flex-1">
               <h1 className="font-grotesk font-bold text-2xl tracking-tight leading-none text-white">StoreSight</h1>
               <p className="text-[10px] text-[#A0A0A0] font-bold tracking-[0.2em] uppercase mt-2">Intelligence Core</p>
+            </div>
+          </div>
+
+          {/* Server Status Indicator */}
+          <div className="mb-8 relative z-10">
+            <div className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-all duration-300 ${
+              serverStatus === 'online' 
+                ? 'bg-green-500/10 border-green-500/30 text-green-400' 
+                : serverStatus === 'waking'
+                ? 'bg-yellow-500/10 border-yellow-500/30 text-yellow-400'
+                : 'bg-red-500/10 border-red-500/30 text-red-400'
+            }`}>
+              <div className={`w-2 h-2 rounded-full ${
+                serverStatus === 'online' 
+                  ? 'bg-green-400 animate-pulse' 
+                  : serverStatus === 'waking'
+                  ? 'bg-yellow-400 animate-pulse'
+                  : 'bg-red-400'
+              }`} />
+              <span className="text-xs font-medium">{serverStatusText}</span>
             </div>
           </div>
 

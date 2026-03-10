@@ -124,6 +124,11 @@ async def run_auditor(req: AuditorReq):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.get("/api/ping")
+async def ping():
+    """Lightweight ping endpoint for wake-up calls"""
+    return {"status": "ok"}
+
 @app.get("/api/health")
 async def check_health():
     eng = get_engine()
