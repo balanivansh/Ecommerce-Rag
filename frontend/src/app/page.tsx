@@ -39,10 +39,16 @@ export default function Home() {
       try {
         setServerStatusText(`Waking up server... (${attempt}/${maxRetries})`);
         
+        // Create timeout manually for better browser compatibility
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+        
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/ping`, {
           method: "GET",
-          signal: AbortSignal.timeout(5000) // 5 second timeout
+          signal: controller.signal
         });
+        
+        clearTimeout(timeoutId);
         
         if (res.ok) {
           const data = await res.json();
@@ -52,8 +58,12 @@ export default function Home() {
             return true;
           }
         }
-      } catch (error) {
+      } catch (error: any) {
         console.log(`Wake-up attempt ${attempt} failed:`, error);
+        // Don't log abort errors as they're expected
+        if (error.name !== 'AbortError') {
+          console.error('Wake-up error:', error);
+        }
       }
       
       if (attempt < maxRetries) {
@@ -250,9 +260,11 @@ export default function Home() {
       if (res.ok) {
         setMessages(prev => [...prev, { role: "assistant", content: data.response }]);
       } else {
+        console.error('Chat API error:', res.status, data);
         showMsg(data.detail || "Error connecting to AI.", "error");
       }
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Chat fetch error:', error);
       showMsg("Backend connection error.", "error");
     } finally {
       setLoading(false);
