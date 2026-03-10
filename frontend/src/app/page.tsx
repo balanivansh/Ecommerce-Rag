@@ -25,7 +25,7 @@ export default function Home() {
 
   const checkHealth = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/health");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/health`);
       if (!res.ok) return;
       const data = await res.json();
       if (!data.vector_db_synced) {
@@ -65,7 +65,7 @@ export default function Home() {
       setLoading(true);
       showMsg("Initializing upload...", "success");
 
-      const res = await fetch("http://localhost:8000/api/ingest/csv", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/ingest/csv`, {
         method: "POST",
         body: formData,
       });
@@ -82,7 +82,7 @@ export default function Home() {
 
       while (!isDone) {
         await new Promise(r => setTimeout(r, 800));
-        const statusRes = await fetch(`http://localhost:8000/api/task/status/${taskId}`);
+        const statusRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/task/status/${taskId}`);
         if (!statusRes.ok) continue;
 
         const statusData = await statusRes.json();
@@ -130,7 +130,7 @@ export default function Home() {
     if (!scrapeUrl) return;
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:8000/api/ingest/scrape", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/ingest/scrape`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url: scrapeUrl }),
@@ -159,7 +159,7 @@ export default function Home() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:8000/api/chat", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: userQuery, history: currentMessages }),
@@ -182,7 +182,7 @@ export default function Home() {
     if (!scrapedTemp) return showMsg("Please scrape a URL first.", "error");
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:8000/api/modules/auditor", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/modules/auditor`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ scraped_data: scrapedTemp }),
