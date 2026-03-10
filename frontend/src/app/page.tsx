@@ -312,12 +312,12 @@ export default function Home() {
           animate={{ x: [0, -2000] }}
           transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
         >
-          <span>INTELLIGENCE</span>
-          <span>ANALYTICS</span>
-          <span>STORE SIGHT</span>
-          <span>INTELLIGENCE</span>
-          <span>ANALYTICS</span>
-          <span>STORE SIGHT</span>
+          <span>PRODUCT INSIGHTS</span>
+          <span>INVENTORY ANALYTICS</span>
+          <span>STORE INTELLIGENCE</span>
+          <span>PRODUCT INSIGHTS</span>
+          <span>INVENTORY ANALYTICS</span>
+          <span>STORE INTELLIGENCE</span>
         </motion.div>
       </div>
 
@@ -343,7 +343,7 @@ export default function Home() {
             </motion.div>
             <div className="flex-1">
               <h1 className="font-grotesk font-bold text-2xl tracking-tight leading-none text-white">StoreSight</h1>
-              <p className="text-[10px] text-[#A0A0A0] font-bold tracking-[0.2em] uppercase mt-2">Intelligence Core</p>
+              <p className="text-[10px] text-[#A0A0A0] font-bold tracking-[0.2em] uppercase mt-2">E-Commerce Intelligence</p>
             </div>
           </div>
 
@@ -373,8 +373,8 @@ export default function Home() {
             <div className="flex flex-col gap-2">
               <h2 className="text-[10px] font-bold text-[#666] uppercase tracking-[0.2em] mb-2">Modules</h2>
               {[
-                { id: "chat", label: "AI Analyst", icon: MessageSquare },
-                { id: "business", label: "SEO Audit", icon: TrendingUp },
+                { id: "chat", label: "Product Analyst", icon: MessageSquare },
+                { id: "business", label: "Market Audit", icon: TrendingUp },
               ].map((tab) => (
                 <button
                   key={tab.id}
@@ -392,12 +392,12 @@ export default function Home() {
 
             {/* Infrastructure Source */}
             <div className="space-y-6">
-              <h2 className="text-[10px] font-bold text-[#666] uppercase tracking-[0.2em]">Data Topology</h2>
+              <h2 className="text-[10px] font-bold text-[#666] uppercase tracking-[0.2em]">Data Sources</h2>
 
               {/* CSV Upload */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#A0A0A0] font-medium">Vector Graph (CSV)</span>
+                  <span className="text-xs text-[#A0A0A0] font-medium">Product Catalog (CSV)</span>
                   <a href="/sample_data.csv" download className="text-[#d1ff26] hover:text-white transition-colors">
                     <ExternalLink size={14} />
                   </a>
@@ -422,7 +422,7 @@ export default function Home() {
 
               {/* Scraper Input */}
               <div className="space-y-3 pt-6 border-t border-[#222]">
-                <span className="text-xs text-[#A0A0A0] font-medium">Competitor Page Target</span>
+                <span className="text-xs text-[#A0A0A0] font-medium">Competitor Analysis</span>
                 <div className="flex bg-[#0A0A0A] border border-[#222] rounded-2xl overflow-hidden focus-within:border-[#d1ff26] transition-colors">
                   <input
                     type="text"
@@ -472,8 +472,8 @@ export default function Home() {
                 className="flex flex-col h-full pl-6"
               >
                 <div className="mb-8">
-                  <h2 className="text-6xl font-black font-grotesk tracking-tighter text-white">System <span className="text-[#d1ff26]">Query.</span></h2>
-                  <p className="text-[#888] mt-2 font-medium">Ask natural language questions against your data graph.</p>
+                  <h2 className="text-6xl font-black font-grotesk tracking-tighter text-white">Product <span className="text-[#d1ff26]">Intelligence.</span></h2>
+                  <p className="text-[#888] mt-2 font-medium">Get AI-powered insights about your products, customers, and sales performance.</p>
                 </div>
 
                 <div className="flex-1 bg-[#111]/50 backdrop-blur-3xl border border-[#222] rounded-[32px] overflow-hidden flex flex-col relative shadow-2xl">
@@ -545,9 +545,9 @@ export default function Home() {
               >
                 <div className="mb-8 flex justify-between items-end">
                   <div>
-                    <h2 className="text-6xl font-black font-grotesk tracking-tighter text-white">Competitor <span className="text-[#d1ff26]">Audit.</span></h2>
+                    <h2 className="text-6xl font-black font-grotesk tracking-tighter text-white">Market <span className="text-[#d1ff26]">Intelligence.</span></h2>
                     <p className="text-[#888] mt-2 font-medium">
-                      {scrapedTemp ? `Target Locked: ${scrapedTemp.url}` : "Awaiting Target Acquisition..."}
+                      {scrapedTemp ? `Analyzing: ${scrapedTemp.url}` : "Analyze competitor products and market trends..."}
                     </p>
                   </div>
                   <motion.button
@@ -557,7 +557,7 @@ export default function Home() {
                     disabled={!scrapedTemp || loading}
                     className={`px-8 py-4 rounded-[20px] font-black uppercase tracking-wider transition-all ${scrapedTemp ? 'bg-[#d1ff26] text-black shadow-[0_10px_40px_rgba(209,255,38,0.2)]' : 'bg-[#222] text-[#555] cursor-not-allowed'}`}
                   >
-                    {loading ? "Analyzing..." : "Run Audit Sequence"}
+                    {loading ? "Analyzing..." : "Generate Insights"}
                   </motion.button>
                 </div>
 
@@ -571,8 +571,11 @@ export default function Home() {
                     </motion.div>
                   ) : (
                     <div className="h-full flex flex-col items-center justify-center text-[#444] space-y-6">
-                      <Globe size={64} strokeWidth={1} />
-                      <p className="text-lg font-medium tracking-wide">NO DATA EXTRACTED.</p>
+                      <TrendingUp size={64} strokeWidth={1} />
+                      <div className="text-center space-y-2">
+                        <p className="text-lg font-medium tracking-wide">Ready for Market Analysis</p>
+                        <p className="text-sm text-[#666]">Enter a competitor URL to generate insights</p>
+                      </div>
                     </div>
                   )}
                 </div>
