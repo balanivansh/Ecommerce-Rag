@@ -327,7 +327,7 @@ Sample Products by Category:
                 meta = match.get("metadata", {})
                 context_data.append(f"[Row {i+1}] {json.dumps(meta)}")
                     
-return "\n".join(context_data) if context_data else "No relevant database records found."
+            return "\n".join(context_data) if context_data else "No relevant database records found."
             
         except Exception as e:
             return f"Error performing semantic search: {str(e)}"
