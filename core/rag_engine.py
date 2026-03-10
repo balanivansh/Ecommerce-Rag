@@ -160,95 +160,205 @@ class RAGEngine:
             history_text = "\n".join([f"{m.get('role', 'user').capitalize()}: {m.get('content', '')}" for m in session_history[-4:]])
             augmented_query = f"Chat History:\n{history_text}\n\nLatest Query: {query}\n\n(Note: Answer or write code based on the 'Latest Query', but use 'Chat History' to resolve any 'it', 'they', or context)"
             
-        routing_sys = """You are a router. Classify the user's 'Latest Query' into exactly one of two categories: 'ANALYTICAL' or 'SEMANTIC'.
-- 'ANALYTICAL': ONLY use this for strict mathematical numbers, counts, averages, or totals (e.g., 'How many...', 'What is the total...', 'Average rating...').
-- 'SEMANTIC': Use this for literally EVERYTHING ELSE. Reading text, finding product names, viewing categories, semantic meaning, or any general question (e.g., 'What are the categories?', 'List the returned products', 'Why are items returned').
-If in doubt, ALWAYS output SEMANTIC. Only output the exact word ANALYTICAL or SEMANTIC."""
+        routing_sys = """You are an intelligent query classifier for an e-commerce RAG system. Classify the user's query into exactly one of these categories:
+
+CATEGORICAL: Questions about categories, types, counts, totals, averages, or any aggregate data
+Examples: "How many categories?", "What categories do you have?", "Total products", "Average rating", "Count of returned items"
+
+PRODUCT_SPECIFIC: Questions about specific products, product details, comparisons, or product features
+Examples: "Tell me about wireless mouse", "Compare TV and keyboard", "Product details for P0001", "Kitchen products"
+
+SEMANTIC: General questions, reviews, opinions, reasons, or any text-based analysis
+Examples: "Why are items returned?", "What do customers think?", "Best rated products", "Customer feedback"
+
+Only output the exact category name: CATEGORICAL, PRODUCT_SPECIFIC, or SEMANTIC"""
         classification = self._call_llm(routing_sys, augmented_query).strip().upper()
         
         context_block = ""
         
-        if "ANALYTICAL" in classification:
-            try:
-                import pandas as pd
-                df = pd.read_csv("sample_data.csv")
-                
-                schema = str(df.dtypes.to_dict())
-                
-                pandas_sys_prompt = f"""You are a world-class Python Pandas expert.
-You have a DataFrame `df` with schema: {schema}
-
-Write EXACTLY one line of Pandas code to answer the user's question.
-- Your code must evaluate directly to the answer.
-- E.g. for counts: `df['Category'].nunique()` or `len(df[df['Status'].str.contains('returned', case=False, na=False)])`
-- E.g. for naming/listing items: `df['Category'].unique().tolist()` or `df[df['Rating'] == 5]['Product Name'].tolist()[:5]`
-- E.g. for the 'most' or 'highest' item name: `df[df['Status'] == 'Returned']['Product Name'].value_counts().idxmax()` (IMPORTANT: Do not just use `.max()`, which returns the number. Use `.idxmax()` to return the actual string name of the item).
-- Use `.str.contains(..., case=False, na=False)` for searching text. 
-- ALWAYS search both `Product Name` and `Description` using `|` for product queries to avoid missing items due to singular/plural (e.g., `df['Product Name'].str.contains('knife', case=False, na=False) | df['Description'].str.contains('knife', case=False, na=False)`).
-- EXTREMELY IMPORTANT: Extract only the single most unique root keyword (e.g. search for 'knife' instead of 'kitchen knives' or 'kitchen knife') to maximize match probability.
-- Do NOT wrap your answer in ```python```. Just the raw code.
-- NO variable assignments (e.g. no `x = ...`)."""
-                
-                current_code = self._call_llm(pandas_sys_prompt, augmented_query).strip()
-                
-                raw_result = None
-                error_msg = None
-                
-                for attempt in range(3):
-                    # Clean the code aggressively
-                    current_code = current_code.replace("```python", "").replace("```", "").strip()
-                    if current_code.lower().startswith("result = "):
-                        current_code = current_code[9:].strip()
-                    elif current_code.lower().startswith("ans = "):
-                        current_code = current_code[6:].strip()
-                        
-                    current_code = current_code.replace("][]", "]").replace("[]", "")
-                    
-                    try:
-                        safe_globals = {"__builtins__": __builtins__, "df": df, "pd": pd}
-                        raw_result = eval(current_code, safe_globals)
-                        error_msg = None
-                        break  # Evaluation succeeded!
-                    except Exception as e:
-                        error_msg = str(e)
-                        print(f"[DEBUG] PANDAS ERROR: {error_msg}")
-                        # Feed the error back into the LLM for self-correction
-                        fix_prompt = f"""Your code `{current_code}` failed with Python error: {error_msg}
-Rewrite the EXACTLY ONE LINE of code to fix this. No explanations. No markdown syntax."""
-                        current_code = self._call_llm(fix_prompt, augmented_query).strip()
-                        
-                if error_msg:
-                    context_block = f"AI could not compute the answer. Last internal error: {error_msg}. Tell the user the metric could not be calculated."
-                else:
-                    context_block = f"""[ANALYTICAL AGGREGATIONS]
-These are precise statistics computed directly from the tabular database. Trust these numbers absolutely.
-Question: {query}
-Result: {str(raw_result)}
-(Do not show any Python or SQL code. Just answer the user's question naturally using the result above.)"""
-            except Exception as e:
-                context_block = f"Critical Pandas Error: {str(e)}"
-                
+        if "CATEGORICAL" in classification:
+            # Use metadata-based analytical approach for categorical questions
+            context_block = self._handle_categorical_query(augmented_query)
+        elif "PRODUCT_SPECIFIC" in classification:
+            # Use targeted vector search for product-specific questions
+            context_block = self._handle_product_query(augmented_query)
         else:
-            intent_sys_prompt = "Extract purely the search keywords from this user query. No formatting, no chat. Just keywords."
-            search_intent = self._call_llm(intent_sys_prompt, augmented_query)
-            
-            if self.index:
-                query_emb = self._get_embeddings([search_intent])[0]
-                results = self.index.query(vector=query_emb, top_k=15, include_metadata=True)
+            # Use semantic search for general questions
+            context_block = self._handle_semantic_query(augmented_query)
+    
+    def _handle_categorical_query(self, query: str) -> str:
+        """Handle categorical questions using metadata aggregation"""
+        try:
+            if not self.index:
+                return "Vector database is not initialized."
                 
-                context_data = []
-                for i, match in enumerate(results.get("matches", [])):
-                    meta = match.get("metadata", {})
-                    context_data.append(f"[Row {i+1}] {json.dumps(meta)}")
-                        
-                context_block = "\n".join(context_data) if context_data else "No relevant database records found."
-            else:
-                context_block = "Vector database is not initialized."
-        
+            # For categorical queries, fetch multiple diverse samples to ensure comprehensive coverage
+            # Use different random vectors to get diverse data points
+            all_categories = set()
+            all_data = []
+            sample_size = 500  # Get larger sample for better coverage
+            
+            # Fetch data in multiple batches to ensure diversity
+            for batch in range(3):  # 3 different random seeds
+                import random
+                random_vector = [random.uniform(-1, 1) for _ in range(384)]
+                response = self.index.query(vector=random_vector, top_k=sample_size//3, include_metadata=True)
+                
+                if response and response.get('matches'):
+                    for match in response['matches']:
+                        meta = match.get('metadata', {})
+                        all_data.append(meta)
+                        if 'Category' in meta:
+                            all_categories.add(meta['Category'])
+            
+            if not all_data:
+                return "No data available in vector database."
+            
+            # Comprehensive aggregation from all collected data
+            categories = list(all_categories)
+            total_products = len(all_data)
+            status_counts = {}
+            rating_sum = 0
+            rating_count = 0
+            stock_count = 0
+            sold_count = 0
+            transit_count = 0
+            returned_count = 0
+            
+            for item in all_data:
+                # Count statuses
+                status = item.get('Status', 'Unknown')
+                status_counts[status] = status_counts.get(status, 0) + 1
+                
+                if status == 'Sold':
+                    sold_count += 1
+                elif status == 'In Transit':
+                    transit_count += 1
+                elif status == 'Returned':
+                    returned_count += 1
+                elif 'Stock' in status:
+                    stock_count += 1
+                
+                # Aggregate ratings
+                rating = item.get('Rating')
+                if rating and rating != '0':
+                    try:
+                        rating_sum += float(rating)
+                        rating_count += 1
+                    except:
+                        pass
+            
+            # Calculate percentages and averages
+            avg_rating = rating_sum / rating_count if rating_count > 0 else 0
+            sold_transit_total = sold_count + transit_count
+            
+            # Create comprehensive context for LLM
+            context = f"""COMPREHENSIVE DATA ANALYSIS:
+Total Products Analyzed: {total_products}
+Unique Categories Found: {categories}
+Category Count: {len(categories)}
+Status Breakdown: {dict(sorted(status_counts.items()))}
+Stock Count: {stock_count}
+Sold Count: {sold_count}
+In Transit Count: {transit_count}
+Returned Count: {returned_count}
+Total Sold+In Transit: {sold_transit_total}
+Average Rating: {avg_rating:.2f} (based on {rating_count} ratings)
+
+Data Quality Check: This analysis is based on {total_products} products sampled from vector database. Categories found: {len(categories)}.
+
+Sample Products by Category:
+"""
+            
+            # Add representative samples from each category found
+            category_samples = {}
+            for item in all_data[:50]:  # First 50 items for samples
+                cat = item.get('Category', 'Unknown')
+                if cat not in category_samples and len(category_samples) < 10:
+                    category_samples[cat] = item
+            
+            for cat, sample_item in category_samples.items():
+                context += f"\n[{cat}] Product: {sample_item.get('Product Name', 'N/A')}, Status: {sample_item.get('Status', 'N/A')}, Rating: {sample_item.get('Rating', 'N/A')}, Stock: {sample_item.get('Stock', 'N/A')}"
+            
+            return context
+            
+        except Exception as e:
+            return f"Error analyzing categorical data: {str(e)}"
+    
+    def _handle_product_query(self, query: str) -> str:
+        """Handle product-specific questions with targeted vector search"""
+        try:
+            # Extract product keywords for better search
+            intent_sys = "Extract the main product keywords from this query. Just the keywords, no extra text."
+            search_intent = self._call_llm(intent_sys, query)
+            
+            if not self.index:
+                return "Vector database is not initialized."
+            
+            # Use vector search for product-specific queries
+            query_emb = self._get_embeddings([search_intent])[0]
+            results = self.index.query(vector=query_emb, top_k=20, include_metadata=True)
+            
+            context_data = []
+            for i, match in enumerate(results.get("matches", [])):
+                meta = match.get("metadata", {})
+                context_data.append(f"[Product {i+1}] {json.dumps(meta)}")
+                    
+            return "\n".join(context_data) if context_data else "No relevant products found."
+            
+        except Exception as e:
+            return f"Error searching for products: {str(e)}"
+    
+    def _handle_semantic_query(self, query: str) -> str:
+        """Handle semantic questions with broad vector search"""
+        try:
+            intent_sys_prompt = "Extract purely the search keywords from this user query. No formatting, no chat. Just keywords."
+            search_intent = self._call_llm(intent_sys_prompt, query)
+            
+            if not self.index:
+                return "Vector database is not initialized."
+            
+            # Use broader search for semantic queries
+            query_emb = self._get_embeddings([search_intent])[0]
+            results = self.index.query(vector=query_emb, top_k=25, include_metadata=True)
+            
+            context_data = []
+            for i, match in enumerate(results.get("matches", [])):
+                meta = match.get("metadata", {})
+                context_data.append(f"[Row {i+1}] {json.dumps(meta)}")
+                    
+return "\n".join(context_data) if context_data else "No relevant database records found."
+            
+        except Exception as e:
+            return f"Error performing semantic search: {str(e)}"
+    
+    def module_c_business_auditor(self, scraped_data: dict) -> str:
+        """Module C: Compare & Suggest against SEO/CRO best practices."""
         system_prompt = f"""You are a Principal E-Commerce Business Analyst AI.
 You help the store owner understand their sales, returns, and customer satisfaction by chatting with them.
 Answer the user's question directly, clearly, and concisely based ONLY on the following context block.
-If the answer is a metric (like 'how many categories'), use the explicit ANALYTICAL AGGREGATIONS provided.
+
+CRITICAL VALIDATION RULES:
+1. For inventory questions: NEVER say "0 products in stock" unless data explicitly shows this
+2. For category questions: ALWAYS report ALL categories found in data
+3. For count questions: Provide exact numbers from context, don't extrapolate
+4. For percentage questions: Calculate from actual data provided
+5. If data seems incomplete: State limitations clearly
+
+system_prompt = f"""You are a Principal E-Commerce Business Analyst AI.
+You help the store owner understand their sales, returns, and customer satisfaction by chatting with them.
+Answer the user's question directly, clearly, and concisely based ONLY on the following context block.
+
+CRITICAL VALIDATION RULES:
+1. For inventory questions: NEVER say "0 products in stock" unless data explicitly shows this
+2. For category questions: ALWAYS report ALL categories found in data
+3. For count questions: Provide exact numbers from context, don't extrapolate
+4. For percentage questions: Calculate from actual data provided
+5. If data seems incomplete: State limitations clearly
+
+For categorical questions, use the comprehensive aggregated data provided.
+For product questions, use specific product details.
+For semantic questions, use provided context samples.
 If the context does not contain the answer, state that clearly. Be conversational but highly analytical.
 
 CONTEXT BLOCK:
@@ -276,8 +386,6 @@ CONTEXT BLOCK:
             return f"Error connecting to LLM: {error_msg}"
         except Exception as e:
             return f"Agent Execution Error: {str(e)}"
-
-    def module_c_business_auditor(self, scraped_data: dict) -> str:
         """Module C: Compare & Suggest against SEO/CRO best practices."""
         system_prompt = """You are a senior SEO and Conversion Rate Optimization (CRO) auditor.
 Analyze the following scraped page data. Compare it against best practices (e.g., clear headings, persuasive descriptions, call-to-actions, keyword richness).
@@ -291,3 +399,40 @@ Description: {scraped_data.get('description')}
 Content Snippet: {scraped_data.get('full_text', '')[:1000]}
 """
         return self._call_llm(system_prompt, content_to_audit)
+    
+    def chat_with_data(self, query: str, session_history: list = None) -> str:
+        if not session_history:
+            session_history = []
+            
+        augmented_query = query
+        if session_history:
+            history_text = "\n".join([f"{m.get('role', 'user').capitalize()}: {m.get('content', '')}" for m in session_history[-4:]])
+            augmented_query = f"Chat History:\n{history_text}\n\nLatest Query: {query}\n\n(Note: Answer or write code based on 'Latest Query', but use 'Chat History' to resolve any 'it', 'they', or context)"
+            
+        routing_sys = """You are an intelligent query classifier for an e-commerce RAG system. Classify the user's query into exactly one of these categories:
+
+CATEGORICAL: Questions about categories, types, counts, totals, averages, or any aggregate data
+Examples: "How many categories?", "What categories do you have?", "Total products", "Average rating", "Count of returned items"
+
+PRODUCT_SPECIFIC: Questions about specific products, product details, comparisons, or product features
+Examples: "Tell me about wireless mouse", "Compare TV and keyboard", "Product details for P0001", "Kitchen products"
+
+SEMANTIC: General questions, reviews, opinions, reasons, or any text-based analysis
+Examples: "Why are items returned?", "What do customers think?", "Best rated products", "Customer feedback"
+
+Only output the exact category name: CATEGORICAL, PRODUCT_SPECIFIC, or SEMANTIC"""
+        classification = self._call_llm(routing_sys, augmented_query).strip().upper()
+        
+        context_block = ""
+        
+        if "CATEGORICAL" in classification:
+            # Use metadata-based analytical approach for categorical questions
+            context_block = self._handle_categorical_query(augmented_query)
+        elif "PRODUCT_SPECIFIC" in classification:
+            # Use targeted vector search for product-specific questions
+            context_block = self._handle_product_query(augmented_query)
+        else:
+            # Use semantic search for general questions
+            context_block = self._handle_semantic_query(augmented_query)
+    
+    def _handle_categorical_query(self, query: str) -> str:
