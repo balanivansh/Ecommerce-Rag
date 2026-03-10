@@ -185,6 +185,48 @@ Only output the exact category name: CATEGORICAL, PRODUCT_SPECIFIC, or SEMANTIC"
         else:
             # Use semantic search for general questions
             context_block = self._handle_semantic_query(augmented_query)
+        
+        system_prompt = f"""You are a Principal E-Commerce Business Analyst AI.
+You help the store owner understand their sales, returns, and customer satisfaction by chatting with them.
+Answer the user's question directly, clearly, and concisely based ONLY on the following context block.
+
+CRITICAL VALIDATION RULES:
+1. For inventory questions: NEVER say "0 products in stock" unless data explicitly shows this
+2. For category questions: ALWAYS report ALL categories found in data
+3. For count questions: Provide exact numbers from context, don't extrapolate
+4. For percentage questions: Calculate from actual data provided
+5. If data seems incomplete: State limitations clearly
+
+For categorical questions, use the comprehensive aggregated data provided.
+For product questions, use specific product details.
+For semantic questions, use the provided context samples.
+If the context does not contain the answer, state that clearly. Be conversational but highly analytical.
+
+CONTEXT BLOCK:
+{context_block}
+"""
+        messages = [{"role": "system", "content": system_prompt}]
+        for msg in session_history:
+            messages.append({"role": msg.get("role", "user"), "content": msg.get("content", "")})
+        
+        messages.append({"role": "user", "content": query})
+        
+        if not self.client:
+            return "Error: Groq API Key is missing in the backend environment."
+            
+        try:
+            from tenacity import RetryError
+            response = self.client.chat.completions.create(
+                model=self.model_name,
+                messages=messages,
+                temperature=0.3
+            )
+            return response.choices[0].message.content
+        except RetryError as e:
+            error_msg = str(e.last_attempt.exception())
+            return f"Error connecting to LLM: {error_msg}"
+        except Exception as e:
+            return f"Agent Execution Error: {str(e)}"
     
     def _handle_categorical_query(self, query: str) -> str:
         """Handle categorical questions using metadata aggregation"""
