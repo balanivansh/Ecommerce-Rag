@@ -1,0 +1,52 @@
+[
+  {
+    "question": "How many categories do we sell?",
+    "answer": "We have 4 unique categories: 'Appliances', 'Apparel', 'Home & Kitchen', and 'Electronics'.",
+    "status": "success"
+  },
+  {
+    "question": "What is our average product rating?",
+    "answer": "Our average product rating is 2.97, based on 399 ratings.",
+    "status": "success"
+  },
+  {
+    "question": "Which category has most returns?",
+    "answer": "The context does not contain sufficient information to determine which category has the most returns. The data provided only includes a sample product from the 'Home & Kitchen' category with a status of 'Returned', but it does not provide return information for the other categories.",
+    "status": "success"
+  },
+  {
+    "question": "What are our best selling products?",
+    "answer": "The context doesn't provide specific information on the best-selling products. However, it does show the overall sales count, which is 266. To determine the best-selling products, we would need more detailed data on individual product sales. The provided sample products only give us information on the status and rating of two specific products: Bluetooth Headphones and Throw Pillow.",
+    "status": "success"
+  },
+  {
+    "question": "How many products are currently in stock?",
+    "answer": "According to the data, the Stock Count is 0.",
+    "status": "success"
+  },
+  {
+    "question": "What percentage of products have been returned?",
+    "answer": "To calculate the percentage of products that have been returned, we need to divide the number of returned products by the total number of products analyzed, and then multiply by 100.\n\nReturned products: 90\nTotal products analyzed: 498\n\nPercentage of returned products = (90 / 498) * 100 = 18.07%\n\nSo, approximately 18.07% of products have been returned.",
+    "status": "success"
+  },
+  {
+    "question": "Which products have 5-star ratings?",
+    "answer": "Based on the provided data, the following products have 5-star ratings:\n\n1. Product ID: P0220, Date: 2023-03-09, Review: \"Best purchase I've made this year.\"\n2. Product ID: P0872, Date: 2023-11-08, Review: \"Absolutely love this product!\"\n3. Product ID: P0592, Date: 2023-12-13, Review: \"Exceeded my expectations entirely.\"\n4. Product ID: P0205, Date: 2023-01-12, Review: \"Super smooth and premium feel.\"\n5. Product ID: P0322, Date: 2023-08-25, Review: \"Exceeded my expectations entirely.\"",
+    "status": "success"
+  },
+  {
+    "question": "What is our most returned product and why?",
+    "answer": "The most returned product is the \"4K Smart TV\" with a total of 11 returns. The reasons for returns include \"Laggy UI\" (5 times), \"Damaged in transit\" (4 times), \"Dead pixels\" (1 time), and \"Damaged in transit\" and \"Laggy UI\" are the most common reasons.",
+    "status": "success"
+  },
+  {
+    "question": "How many products are sold vs in transit?",
+    "answer": "According to the data, 267 products are sold and 65 products are in transit. The total number of products that are either sold or in transit is 332.",
+    "status": "success"
+  },
+  {
+    "question": "What categories have the highest customer satisfaction?",
+    "answer": "To determine the categories with the highest customer satisfaction, we need to analyze the 'Rating' column in the context data. Since the data only provides a rating of 1 to 5, with 5 being the highest, we can calculate the average rating for each category.\n\nBased on the provided data, here are the average ratings for each category:\n\n- Apparel: (3+3+3+5+4+5+5+5+5+5+3+3+5+5+5)/15 = 4.07\n- Electronics: (1+3+3+3)/4 = 2.5\n- Home & Kitchen: (3+3+3+3+3+3)/6 = 3\n- Appliances: (3+2+2+3+3)/5 = 2.6\n\nThe category with the highest customer satisfaction is 'Apparel' with an average rating of 4.07.",
+    "status": "success"
+  }
+]
