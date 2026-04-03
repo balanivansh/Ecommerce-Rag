@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { MessageSquare, TrendingUp, Upload, Globe, ShoppingBag, Terminal, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -19,6 +19,16 @@ export default function Home() {
   const [messages, setMessages] = useState<{ role: string, content: string }[]>([
     { role: "assistant", content: "AI Store Analyst online. Awaiting data ingestion or query..." }
   ]);
+  
+  // Auto-scroll functionality
+  const chatContainerRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll to bottom when new messages are added
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   // Module C
   const [scrapedTemp, setScrapedTemp] = useState<any>(null);
@@ -531,7 +541,7 @@ export default function Home() {
                     </div>
                   )}
 
-                  <div className="flex-1 overflow-y-auto p-8 space-y-8 custom-scroll">
+                  <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-8 space-y-8 custom-scroll">
                     {messages.map((msg, idx) => (
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
