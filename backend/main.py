@@ -34,7 +34,7 @@ def get_engine():
     global engine
     if engine is None:
         print("Initializing RAGEngine (this may take a minute to download models)...")
-        engine = RAGEngine(use_demo_data=True)
+        engine = RAGEngine(use_demo_data=False)
     return engine
 
 class ScrapeReq(BaseModel):
