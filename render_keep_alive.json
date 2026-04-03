@@ -1,0 +1,37 @@
+{
+  "name": "StoreSight AI Keep-Alive Service",
+  "description": "External monitoring to keep Render backend awake for evaluation",
+  "services": [
+    {
+      "name": "UptimeRobot",
+      "url": "https://uptimerobot.com/",
+      "type": "Free monitoring service",
+      "interval": "5 minutes",
+      "target": "https://ecommerce-rag.onrender.com/api/health",
+      "setup": "1. Create free account at uptimerobot.com\n2. Add new monitor\n3. Set URL to https://ecommerce-rag.onrender.com/api/health\n4. Set interval to 5 minutes\n5. Save and activate"
+    },
+    {
+      "name": "Pingdom",
+      "url": "https://www.pingdom.com/",
+      "type": "Free monitoring service", 
+      "interval": "10 minutes",
+      "target": "https://ecommerce-rag.onrender.com/api/health",
+      "setup": "1. Create free account at pingdom.com\n2. Add new uptime check\n3. Set URL to https://ecommerce-rag.onrender.com/api/health\n4. Set check interval to 10 minutes\n5. Save and activate"
+    },
+    {
+      "name": "StatusCake",
+      "url": "https://statuscake.com/",
+      "type": "Free monitoring service",
+      "interval": "5 minutes", 
+      "target": "https://ecommerce-rag.onrender.com/api/health",
+      "setup": "1. Create free account at statuscake.com\n2. Add new monitor\n3. Set URL to https://ecommerce-rag.onrender.com/api/health\n4. Set check interval to 5 minutes\n5. Save and activate"
+    }
+  ],
+  "recommendation": "Use UptimeRobot - it's free, reliable, and easy to set up",
+  "alternatives": [
+    "Run keep_alive.py script locally on your computer",
+    "Deploy to PythonAnywhere (free Python hosting)",
+    "Use GitHub Actions scheduled workflow",
+    "Deploy to Replit (always-on environment)"
+  ]
+}
