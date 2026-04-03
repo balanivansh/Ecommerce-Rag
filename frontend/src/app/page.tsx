@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { MessageSquare, TrendingUp, Upload, Globe, ShoppingBag, Terminal, ExternalLink } from "lucide-react";
+import { MessageSquare, TrendingUp, Upload, Globe, ShoppingBag, Terminal, ExternalLink, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
@@ -41,28 +41,84 @@ export default function Home() {
   const wakeUpServer = async () => {
     setServerStatus("waking");
     setServerStatusText("Waking up server...");
+    
+    const maxRetries = 10;
+    const retryDelay = 2000; // 2 seconds
+    
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        setServerStatusText(`Waking up server... (${attempt}/${maxRetries})`);
+        
+        // Create timeout manually for better browser compatibility
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+        
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/ping`, {
+          method: "GET",
+          signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
+        
+        if (res.ok) {
+          const data = await res.json();
+          if (data.status === "ok") {
+            setServerStatus("online");
+            setServerStatusText("Server online");
+            return true;
+          }
+        }
+      } catch (error: any) {
+        console.log(`Wake-up attempt ${attempt} failed:`, error);
+        // Don't log abort errors as they're expected
+        if (error.name !== 'AbortError') {
+          console.error('Wake-up error:', error);
+        }
+      }
+      
+      if (attempt < maxRetries) {
+        await new Promise(resolve => setTimeout(resolve, retryDelay));
+      }
+    }
+    
+    setServerStatus("offline");
+    setServerStatusText("Server unavailable - please try again later");
+    return false;
+  };
+
+  const checkHealth = async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/health`, { method: "GET" });
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/health`);
+      if (!res.ok) return;
       const data = await res.json();
       if (!data.vector_db_synced) {
         showMsg("Data Graph Uninitialized. Please Sync Data CSV.", "error");
         setMessages([
-          { role: "assistant", content: "⚠️ SYSTEM NOTICE: The Vector Database is empty. I cannot answer general semantic questions until you upload Store Data CSV via the 'Sync Data' action in the topology menu." }
+          { role: "assistant", content: "⚠️ SYSTEM NOTICE: The Vector Database is empty. I cannot answer general semantic questions until you upload the Store Data CSV via the 'Sync Data' action in the topology menu." }
         ]);
       }
-      setServerStatus("online");
-      setServerStatusText("Server online");
-    } catch (error) {
-      setServerStatus("offline");
-      setServerStatusText("Server offline");
+    } catch (e) {
+      console.error("Health check failed", e);
     }
   };
 
   useEffect(() => {
-    wakeUpServer();
-    const interval = setInterval(wakeUpServer, 30000);
-    return () => clearInterval(interval);
+    // Start wake-up process immediately
+    wakeUpServer().then(success => {
+      if (success) {
+        // Only check health if server is awake
+        checkHealth();
+      }
+    });
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
+
+  const [isDragging, setIsDragging] = useState(false);
 
   const showMsg = (text: string, type: "success" | "error" = "success") => {
     setStatusMsg({ text, type });
@@ -101,39 +157,86 @@ export default function Home() {
         return;
       }
 
-      showMsg("✅ CSV uploaded successfully! Vector database syncing...", "success");
-      setLoading(false);
-      setTimeout(wakeUpServer, 3000);
-    } catch (error: any) {
-      console.error("Upload error:", error);
-      showMsg("Upload failed. Please try again.", "error");
+      const taskId = data.task_id;
+      let isDone = false;
+
+      while (!isDone) {
+        await new Promise(r => setTimeout(r, 800));
+        const statusRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/task/status/${taskId}`);
+        if (!statusRes.ok) continue;
+
+        const statusData = await statusRes.json();
+
+        if (statusData.status === "processing") {
+          setStatusMsg({ text: statusData.message || "Processing data...", type: "success" });
+        } else if (statusData.status === "completed") {
+          showMsg(statusData.message, "success");
+          isDone = true;
+          // After successful upload, re-check health to clear the warning
+          checkHealth();
+        } else if (statusData.status === "failed") {
+          showMsg(statusData.message, "error");
+          isDone = true;
+        }
+      }
+    } catch (e) {
+      showMsg("Backend connection error.", "error");
+    } finally {
       setLoading(false);
     }
   };
 
   const uploadCSV = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) processUpload(file);
+    if (e.target.files?.[0]) processUpload(e.target.files[0]);
   };
 
   const onDragOver = (e: React.DragEvent) => {
     e.preventDefault();
-    e.stopPropagation();
+    setIsDragging(true);
   };
 
   const onDragLeave = (e: React.DragEvent) => {
     e.preventDefault();
-    e.stopPropagation();
+    setIsDragging(false);
   };
 
   const onDrop = (e: React.DragEvent) => {
     e.preventDefault();
-    e.stopPropagation();
-    const file = e.dataTransfer.files[0];
-    if (file) processUpload(file);
+    setIsDragging(false);
+    if (e.dataTransfer.files?.[0]) processUpload(e.dataTransfer.files[0]);
   };
 
-  const [isDragging, setIsDragging] = useState(false);
+  const scrapeSite = async () => {
+    if (!scrapeUrl) return;
+
+    // Prevent scraping if server is not online
+    if (serverStatus !== 'online') {
+      if (serverStatus === 'waking') {
+        showMsg("Server is waking up. Please wait a moment...", "error");
+      } else {
+        showMsg("Server is unavailable. Please refresh the page.", "error");
+      }
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/ingest/scrape`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url: scrapeUrl }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setScrapedTemp(data.data);
+        showMsg(`Scraped: ${data.data.title}`, "success");
+      } else showMsg(data.detail, "error");
+    } catch (e) {
+      showMsg("Backend error.", "error");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const sendMessage = async (e?: React.FormEvent) => {
     e?.preventDefault();
@@ -178,45 +281,24 @@ export default function Home() {
     }
   };
 
-  const scrapeSite = async () => {
-    if (!scrapeUrl.trim()) return showMsg("Please enter a valid URL.", "error");
-    if (!scrapeUrl.startsWith("http")) return showMsg("URL must start with http:// or https://", "error");
-
+  const runModC = async () => {
+    if (!scrapedTemp) return showMsg("Please scrape a URL first.", "error");
     try {
       setLoading(true);
-      setModCResult("");
-      setScrapedTemp({ url: scrapeUrl });
-
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/audit/seo`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "https://ecommerce-rag.onrender.com"}/api/modules/auditor`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url: scrapeUrl }),
+        body: JSON.stringify({ scraped_data: scrapedTemp }),
       });
       const data = await res.json();
-
-      if (!res.ok) {
-        showMsg(data.detail || "Audit failed", "error");
-        setLoading(false);
-        return;
-      }
-
-      showMsg("✅ SEO audit completed!", "success");
-      setModCResult(data.result);
-      setLoading(false);
-    } catch (error: any) {
-      console.error("Scrape error:", error);
-      showMsg("Scraping failed. Please try again.", "error");
+      if (res.ok) setModCResult(data.report);
+      else showMsg(data.detail, "error");
+    } catch (e) {
+      showMsg("Backend error.", "error");
+    } finally {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   return (
     <div className="min-h-screen bg-black text-[#fcfcfc] font-sans selection:bg-[#d1ff26] selection:text-black overflow-hidden relative">
@@ -240,6 +322,9 @@ export default function Home() {
           animate={{ x: [0, -2000] }}
           transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
         >
+          <span>PRODUCT INSIGHTS</span>
+          <span>INVENTORY ANALYTICS</span>
+          <span>STORE INTELLIGENCE</span>
           <span>PRODUCT INSIGHTS</span>
           <span>INVENTORY ANALYTICS</span>
           <span>STORE INTELLIGENCE</span>
@@ -269,6 +354,26 @@ export default function Home() {
             <div className="flex-1">
               <h1 className="font-grotesk font-bold text-2xl tracking-tight leading-none text-white">StoreSight</h1>
               <p className="text-[10px] text-[#A0A0A0] font-bold tracking-[0.2em] uppercase mt-2">E-Commerce Intelligence</p>
+            </div>
+          </div>
+
+          {/* Server Status Indicator */}
+          <div className="mb-8 relative z-10">
+            <div className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-all duration-300 ${
+              serverStatus === 'online' 
+                ? 'bg-green-500/10 border-green-500/30 text-green-400' 
+                : serverStatus === 'waking'
+                ? 'bg-yellow-500/10 border-yellow-500/30 text-yellow-400'
+                : 'bg-red-500/10 border-red-500/30 text-red-400'
+            }`}>
+              <div className={`w-2 h-2 rounded-full ${
+                serverStatus === 'online' 
+                  ? 'bg-green-400 animate-pulse' 
+                  : serverStatus === 'waking'
+                  ? 'bg-yellow-400 animate-pulse'
+                  : 'bg-red-400'
+              }`} />
+              <span className="text-xs font-medium">{serverStatusText}</span>
             </div>
           </div>
 
@@ -347,7 +452,7 @@ export default function Home() {
                       download 
                       className="bg-[#d1ff26] hover:bg-white text-black hover:text-[#222] px-4 py-2 rounded-xl font-bold text-sm transition-all duration-300 flex items-center gap-2 group"
                     >
-                      <ExternalLink size={16} className="group-hover:scale-110 transition-transform" />
+                      <Download size={16} className="group-hover:scale-110 transition-transform" />
                       Download Sample
                     </a>
                   </div>
@@ -390,6 +495,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
         </motion.div>
 
         {/* RIGHT PANEL: MAIN INTERFACE */}
@@ -505,12 +611,11 @@ export default function Home() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={scrapeSite}
-                    disabled={loading || !scrapeUrl.trim()}
-                    className="bg-[#d1ff26] hover:bg-white text-black hover:text-[#222] px-6 py-3 rounded-[16px] font-bold tracking-wide disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    onClick={runModC}
+                    disabled={!scrapedTemp || loading}
+                    className={`px-8 py-4 rounded-[20px] font-black uppercase tracking-wider transition-all ${scrapedTemp ? 'bg-[#d1ff26] text-black shadow-[0_10px_40px_rgba(209,255,38,0.2)]' : 'bg-[#222] text-[#555] cursor-not-allowed'}`}
                   >
-                    <Globe size={16} />
-                    AUDIT SITE
+                    {loading ? "Analyzing..." : "Generate Insights"}
                   </motion.button>
                 </div>
 
