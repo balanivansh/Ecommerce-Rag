@@ -394,14 +394,61 @@ export default function Home() {
             <div className="space-y-6">
               <h2 className="text-[10px] font-bold text-[#666] uppercase tracking-[0.2em]">Data Sources</h2>
 
-              {/* CSV Upload */}
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#A0A0A0] font-medium">Product Catalog (CSV)</span>
-                  <a href="/sample_data.csv" download className="text-[#d1ff26] hover:text-white transition-colors">
-                    <ExternalLink size={14} />
-                  </a>
+              {/* Step-by-Step Guide */}
+              <div className="bg-gradient-to-r from-[#d1ff26]/10 to-[#d1ff26]/5 border border-[#d1ff26]/20 rounded-2xl p-6 space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="bg-[#d1ff26] text-black rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">1</div>
+                  <div>
+                    <h3 className="text-sm font-bold text-white mb-1">Download Sample CSV</h3>
+                    <p className="text-xs text-[#A0A0A0]">Get our sample product catalog with 2000+ items to test the system</p>
+                  </div>
                 </div>
+                
+                <div className="flex items-start gap-3">
+                  <div className="bg-[#d1ff26] text-black rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">2</div>
+                  <div>
+                    <h3 className="text-sm font-bold text-white mb-1">Upload CSV File</h3>
+                    <p className="text-xs text-[#A0A0A0]">Drag & drop or click the upload area below</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <div className="bg-[#d1ff26] text-black rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">3</div>
+                  <div>
+                    <h3 className="text-sm font-bold text-white mb-1">Wait for Processing</h3>
+                    <p className="text-xs text-[#A0A0A0]">Watch the status bar for vector database sync completion</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <div className="bg-[#d1ff26] text-black rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">4</div>
+                  <div>
+                    <h3 className="text-sm font-bold text-white mb-1">Test Chat Interface</h3>
+                    <p className="text-xs text-[#A0A0A0]">Ask questions about your products, categories, ratings, and more</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* CSV Upload */}
+              <div className="space-y-4 mt-6">
+                <div className="bg-gradient-to-r from-[#222] to-[#1A1A1A] border border-[#333] rounded-2xl p-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="bg-[#d1ff26] text-black px-3 py-1 rounded-full text-xs font-bold">SAMPLE DATA</div>
+                      <span className="text-sm font-bold text-white">Product Catalog (CSV)</span>
+                    </div>
+                    <a 
+                      href="/sample_data.csv" 
+                      download 
+                      className="bg-[#d1ff26] hover:bg-white text-black hover:text-[#222] px-4 py-2 rounded-xl font-bold text-sm transition-all duration-300 flex items-center gap-2 group"
+                    >
+                      <Download size={16} className="group-hover:scale-110 transition-transform" />
+                      Download Sample
+                    </a>
+                  </div>
+                  <div className="text-xs text-[#888] mb-3">
+                    <span className="text-[#d1ff26]">2,000+ products</span> • <span className="text-[#d1ff26]">4 categories</span> • <span className="text-[#d1ff26]">Ratings & Reviews</span>
+                  </div>
                 <label
                   onDragOver={onDragOver}
                   onDragLeave={onDragLeave}
