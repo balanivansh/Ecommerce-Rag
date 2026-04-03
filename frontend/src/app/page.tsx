@@ -335,7 +335,7 @@ export default function Home() {
               </div>
 
               {/* CSV Upload */}
-              <motion.div className="space-y-4 mt-6">
+              <div className="space-y-4 mt-6">
                 <div className="bg-gradient-to-r from-[#222] to-[#1A1A1A] border border-[#333] rounded-2xl p-4">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
